@@ -1,0 +1,62 @@
+[
+  {
+    "id": "todo",
+    "name": "TO DO"
+  },
+  {
+    "id": "bloodmother",
+    "name": "Bloodmother S'ilreth"
+  },
+  {
+    "id": "archon-commander",
+    "name": "Archon commander"
+  },
+  {
+    "id": "ryvn",
+    "name": "Ryv'n the devourer"
+  },
+  {
+    "id": "trial-lingering-light",
+    "name": "The trial of the lingering light"
+  },
+  {
+    "id": "argent-hand",
+    "name": "The argent hand"
+  },
+  {
+    "id": "first",
+    "name": "The first"
+  },
+  {
+    "id": "bloodspawn",
+    "name": "The bloodspawn"
+  },
+  {
+    "id": "bloodbore",
+    "name": "The bloodbore"
+  },
+  {
+    "id": "deceiver-maras",
+    "name": "Grand deceiver Maras"
+  },
+  {
+    "id": "dread-legion",
+    "name": "Dread legion"
+  },
+  {
+    "id": "wormwood",
+    "name": "Wormwood"
+  },
+  {
+    "id": "storm-twins",
+    "name": "Storm twins"
+  },
+  {
+    "id": "beastmaster",
+    "name": "Kolaar the beastmaster"
+  },
+  {
+    "id": "reaver-king",
+    "name": "The reaver king"
+  }
+]

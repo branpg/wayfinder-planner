@@ -1,0 +1,38 @@
+[
+  {
+    "id": "codex-halls",
+    "name": "Codex halls"
+  },
+  {
+    "id": "undercroft",
+    "name": "The undercroft"
+  },
+  {
+    "id": "repository-knowledge",
+    "name": "The repository of knowledge"
+  },
+  {
+    "id": "pit",
+    "name": "The pit"
+  },
+  {
+    "id": "bloodworks",
+    "name": "The bloodworks"
+  },
+  {
+    "id": "bal-duum",
+    "name": "Bal duum"
+  },
+  {
+    "id": "shrouded-woods",
+    "name": "The shrouded woods"
+  },
+  {
+    "id": "bone-orchard",
+    "name": "The bone orchard"
+  },
+  {
+    "id": "hollow-heart",
+    "name": "The hollow heart"
+  }
+]

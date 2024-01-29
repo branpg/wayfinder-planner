@@ -1,0 +1,27 @@
+[
+  {
+    "id": "solar",
+    "name": "Solar",
+    "max_tier": 2
+  },
+  {
+    "id": "shadow",
+    "name": "Shadow",
+    "max_tier": 3
+  },
+  {
+    "id": "chaos",
+    "name": "Chaos",
+    "max_tier": 2
+  },
+  {
+    "id": "flora",
+    "name": "Flora",
+    "max_tier": 2
+  },
+  {
+    "id": "greed",
+    "name": "Greed",
+    "max_tier": 2
+  }
+]
