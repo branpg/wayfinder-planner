@@ -1,13 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <title>WayfinderPlanner</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Branpg's Wayfinder planner</title>
 </head>
-<body>
-  <app-root></app-root>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-4">
+        <div>
+            <h3 class="mb-0 text-center">Branpg's Wayfinder planner</h3>
+        </div>
+    </header>
+
+    <main class="px-3 pb-4">
+        <app-root></app-root>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+        <p>Version 0.1.0 - Created by Branpg <a href="https://twitter.com/Branpg_Yelren"><i class="bi bi-twitter text-white-50 mx-1"></i></a> <a href="https://www.reddit.com/user/Branpg"><i class="bi bi-reddit text-white-50"></i></a></p>
+    </footer>
+</div>
 </body>
 </html>

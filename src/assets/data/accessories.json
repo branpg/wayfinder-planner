@@ -1,0 +1,214 @@
+[
+  {
+    "id": "pouch-corrupted-powders",
+    "name": "Pouch of corrupted powders",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "pouch-corrupted-powders",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "twisted-totem",
+    "name": "Twisted totem",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "twisted-totem",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "hollow-heart",
+    "name": "Hollow heart",
+    "materials": {
+      "get": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 30
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 10
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 6
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": 3
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "corrupted-totem",
+    "name": "Corrupted totem",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "corrupted-totem",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "gloom-touched-claw",
+    "name": "Gloom-touched claw",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "gloom-touched-claw",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "charred-antler-pendant",
+    "name": "Charred antler pendant",
+    "materials": {
+      "get": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 18
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 8
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": 2
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "golden-heart",
+    "name": "Golden heart",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "golden-heart",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "golden-cloak",
+    "name": "Golden cloak",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "golden-cloak",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "golden-stalker-claw",
+    "name": "Golden stalker claw",
+    "materials": {
+      "get": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 24
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 18
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 12
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "buckle-raven",
+    "name": "Buckle of raven",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "buckle-raven",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "mask-glory",
+    "name": "Mask of glory",
+    "is_crafted": false,
+    "materials": {
+      "get": [
+        {
+          "material": "mask-glory",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "aturach-oath",
+    "name": "Aturach's oath",
+    "materials": {
+      "get": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 30
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 12
+        },
+        {
+          "material": "shadow-t3-spectra",
+          "quantity": 4
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": 3
+        },
+        {
+          "material": "opal-king",
+          "quantity": 1
+        }
+      ]
+    }
+  }
+]

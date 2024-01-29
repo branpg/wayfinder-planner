@@ -1,0 +1,94 @@
+[
+  {
+    "id": "reaver-king-artifact",
+    "name": "Reaver king artifact",
+    "materials": {
+      "craft": [
+        {
+          "material": "reaver-king-artifact-recipe",
+          "quantity": 1
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 150
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 6
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": 3
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "dread-legion-artifact",
+    "name": "Dread legion artifact",
+    "materials": {
+      "craft": [
+        {
+          "material": "dread-legion-artifact-recipe",
+          "quantity": 1
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 150
+        },
+        {
+          "material": "shadow-t3-spectra",
+          "quantity": 28
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 28
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 21
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "first-artifact",
+    "name": "First artifact",
+    "materials": {
+      "craft": [
+        {
+          "material": "first-artifact-recipe",
+          "quantity": 1
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 150
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 35
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 28
+        },
+        {
+          "material": "solar-spectra",
+          "quantity": 21
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 1
+        }
+      ]
+    }
+  }
+]

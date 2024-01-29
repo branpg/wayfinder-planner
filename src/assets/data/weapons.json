@@ -1,0 +1,212 @@
+[
+  {
+    "id": "umbros",
+    "name": "Umbros",
+    "materials": {
+      "unlock": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 23
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": 3
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 23
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "storm-twins-ire",
+          "quantity": 3
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 23
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": 3
+        },
+        {
+          "material": "umbros-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "windmother-fang",
+    "name": "Windmother's Fang",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": 105
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 24
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 105
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 24
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "archon-prisma",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 105
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 23
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": 3
+        },
+        {
+          "material": "windmother-fang-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "harvest-moon",
+    "name": "Harvest moon",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 3
+        },
+        {
+          "material": "harvest-moon-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  }
+]

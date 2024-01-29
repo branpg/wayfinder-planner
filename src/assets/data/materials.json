@@ -1,0 +1,539 @@
+[
+  {
+    "id": "kyros-sorcery",
+    "name": "Vestige of Kyros's sorcery",
+    "zones": [
+      "dread-legion"
+    ]
+  },
+  {
+    "id": "kyros-secrets",
+    "name": "Vestige of Kyros's secrets",
+    "zones": [
+      "storm-twins"
+    ]
+  },
+  {
+    "id": "kyros-sight",
+    "name": "Vestige of Kyros's sight",
+    "zones": [
+      "beastmaster"
+    ]
+  },
+  {
+    "id": "wingrave-faith",
+    "name": "Vestige of Wingrave's faith",
+    "zones": [
+      "first"
+    ]
+  },
+  {
+    "id": "wingrave-courage",
+    "name": "Vestige of Wingrave's courage",
+    "zones": [
+      "bloodspawn"
+    ]
+  },
+  {
+    "id": "wingrave-prowess",
+    "name": "Vestige of Wingrave's prowess",
+    "zones": [
+      "argent-hand"
+    ]
+  },
+  {
+    "id": "ven-venom",
+    "name": "Vestige of Ven's guile",
+    "zones": [
+      "deceiver-maras"
+    ]
+  },
+  {
+    "id": "ven-duty",
+    "name": "Vestige of Ven's guile",
+    "zones": [
+      "todo"
+    ]
+  },
+  {
+    "id": "ven-guile",
+    "name": "Vestige of Ven's guile",
+    "zones": [
+      "first"
+    ]
+  },
+  {
+    "id": "niss-steel",
+    "name": "Vestige of Niss's steel",
+    "zones": [
+      "night-maw"
+    ]
+  },
+  {
+    "id": "niss-will",
+    "name": "Vestige of Niss's will",
+    "zones": [
+      "bloodmother"
+    ]
+  },
+  {
+    "id": "niss-shadow",
+    "name": "Vestige of Niss's shadow",
+    "zones": [
+      "archon-commander"
+    ]
+  },
+  {
+    "id": "senja-might",
+    "name": "Vestige of Senja's might",
+    "zones": [
+      "beastmaster"
+    ]
+  },
+  {
+    "id": "senja-glory",
+    "name": "Vestige of Senja's glory",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "senja-storm",
+    "name": "Vestige of Senja's storm",
+    "zones": [
+      "dread-legion"
+    ]
+  },
+  {
+    "id": "silo-cunning",
+    "name": "Vestige of Silo's cunning",
+    "zones": [
+      "trial-lingering-light"
+    ]
+  },
+  {
+    "id": "silo-speed",
+    "name": "Vestige of Silo's speed",
+    "zones": [
+      "argent-hand"
+    ]
+  },
+  {
+    "id": "silo-precision",
+    "name": "Vestige of Silo's precision",
+    "zones": [
+      "ryvn"
+    ]
+  },
+  {
+    "id": "windmother-fang-essence",
+    "name": "Windmother's fang essence",
+    "zones": [
+      "argent-hand"
+    ]
+  },
+  {
+    "id": "harvest-moon-essence",
+    "name": "Harvest moon essence",
+    "zones": [
+      "first"
+    ]
+  },
+  {
+    "id": "umbros-essence",
+    "name": "Umbros essence",
+    "zones": [
+      "deceiver-maras"
+    ]
+  },
+  {
+    "id": "devourer-talon",
+    "name": "Devourer's talon",
+    "zones": [
+      "ryvn"
+    ]
+  },
+  {
+    "id": "prismatic-arcanite",
+    "name": "Prismatic arcanite",
+    "zones": [
+      "argent-hand"
+    ]
+  },
+  {
+    "id": "archon-prisma",
+    "name": "Archon's prisma",
+    "zones": [
+      "archon-commander"
+    ]
+  },
+  {
+    "id": "radiant-octachron",
+    "name": "Radiant octachron",
+    "zones": [
+      "first"
+    ]
+  },
+  {
+    "id": "grand-iriscite",
+    "name": "Grand iriscite",
+    "zones": [
+      "deceiver-maras"
+    ]
+  },
+  {
+    "id": "storm-twins-ire",
+    "name": "Storm twin's ire",
+    "zones": [
+      "storm-twins"
+    ]
+  },
+  {
+    "id": "wormwood-ether",
+    "name": "Wormwood ether",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "opal-king",
+    "name": "Opal of the king",
+    "zones": [
+      "reaver-king"
+    ]
+  },
+  {
+    "id": "halcyon-orb",
+    "name": "Halcyon orb",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge"
+    ]
+  },
+  {
+    "id": "archaic-bone",
+    "name": "Archaic bone",
+    "zones": [
+      "pit",
+      "bloodworks",
+      "bal-duum"
+    ]
+  },
+  {
+    "id": "witchcharmed-effigy",
+    "name": "Witchcharmed effigy",
+    "zones": [
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ]
+  },
+  {
+    "id": "trickster-coin",
+    "name": "Trickster's coin",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ]
+  },
+  {
+    "id": "treasure-phoenix-down",
+    "name": "Treasure phoenix down",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ]
+  },
+  {
+    "id": "gem-avarice",
+    "name": "Gem of avarice",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ]
+  },
+  {
+    "id": "solar-t1-spectra",
+    "name": "Molten spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "solar",
+      "tier": 1
+    }
+  },
+  {
+    "id": "solar-t2-spectra",
+    "name": "Glimmering molten spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "solar",
+      "tier": 2
+    }
+  },
+  {
+    "id": "shadow-t1-spectra",
+    "name": "Shadow-warped spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "shadow",
+      "tier": 1
+    }
+  },
+  {
+    "id": "shadow-t2-spectra",
+    "name": "Glimmering shadow-warped spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "shadow",
+      "tier": 2
+    }
+  },
+  {
+    "id": "shadow-t3-spectra",
+    "name": "Pristine shadow-warped spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "shadow",
+      "tier": 3
+    }
+  },
+  {
+    "id": "chaos-t1-spectra",
+    "name": "Unestable spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "chaos",
+      "tier": 1
+    }
+  },
+  {
+    "id": "chaos-t2-spectra",
+    "name": "Glimmering unestable spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "chaos",
+      "tier": 2
+    }
+  },
+  {
+    "id": "flora-t1-spectra",
+    "name": "Veridian spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "flora",
+      "tier": 1
+    }
+  },
+  {
+    "id": "flora-t2-spectra",
+    "name": "Glimmering veridian spectra",
+    "zones": [
+      "codex-halls",
+      "undercroft",
+      "repository-knowledge",
+      "pit",
+      "bloodworks",
+      "bal-duum",
+      "shrouded-woods",
+      "bone-orchard",
+      "hollow-heart"
+    ],
+    "mutator": {
+      "id": "flora",
+      "tier": 2
+    }
+  },
+  {
+    "id": "silver-spectra",
+    "name": "Silver spectra",
+    "zones": [
+      "codex-halls"
+    ]
+  },
+  {
+    "id": "bloodtouched-spectra",
+    "name": "Bloodtouched spectra",
+    "zones": [
+      "pit"
+    ]
+  },
+  {
+    "id": "deepwood-spectra",
+    "name": "Deepwood spectra",
+    "zones": [
+      "shrouded-woods"
+    ]
+  },
+  {
+    "id": "pouch-corrupted-powders",
+    "name": "Pouch of corrupted powders",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "twisted-totem",
+    "name": "Twisted totem",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "mask-glory",
+    "name": "Mask of glory",
+    "zones": [
+      "reaver-king"
+    ]
+  },
+  {
+    "id": "buckle-raven",
+    "name": "Buckle of raven",
+    "zones": [
+      "reaver-king"
+    ]
+  },
+  {
+    "id": "golden-cloak",
+    "name": "Golden cloak",
+    "zones": [
+      "wormwood",
+      "storm-twins",
+      "beastmaster",
+      "reaver-king"
+    ],
+    "mutator": {
+      "id": "greed",
+      "tier": 1
+    }
+  },
+  {
+    "id": "golden-heart",
+    "name": "Golden heart",
+    "zones": [
+      "wormwood",
+      "storm-twins",
+      "beastmaster",
+      "reaver-king"
+    ],
+    "mutator": {
+      "id": "greed",
+      "tier": 1
+    }
+  },
+  {
+    "id": "corrupted-totem",
+    "name": "Corrupted totem",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "gloom-touched-claw",
+    "name": "Gloom-touched claw",
+    "zones": [
+      "beastmaster"
+    ]
+  }
+]

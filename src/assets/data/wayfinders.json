@@ -1,0 +1,539 @@
+[
+  {
+    "id": "kyros",
+    "name": "Kyros",
+    "materials": {
+      "unlock": [
+        {
+          "material": "kyros-sorcery",
+          "quantity": 3
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 15
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 45
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 112
+        },
+        {
+          "material": "kyros-secrets",
+          "quantity": 3
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 15
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 75
+        },
+        {
+          "material": "kyros-sight",
+          "quantity": 3
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 15
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 75
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+        {
+          "material": "kyros-sorcery",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 18
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 63
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 158
+        },
+        {
+          "material": "kyros-secrets",
+          "quantity": 4
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 18
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 105
+        },
+        {
+          "material": "kyros-sight",
+          "quantity": 4
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 18
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 105
+        }
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "niss",
+    "name": "Niss",
+    "materials": {
+      "unlock": [
+        {
+          "material": "niss-steel",
+          "quantity": 3
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": 5
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 30
+        },
+        {
+          "material": "shadow-t1-spectra",
+          "quantity": 75
+        },
+        {
+          "material": "niss-will",
+          "quantity": 3
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 5
+        },
+        {
+          "material": "shadow-t1-spectra",
+          "quantity": 25
+        },
+        {
+          "material": "niss-shadow",
+          "quantity": 3
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 5
+        },
+        {
+          "material": "shadow-t1-spectra",
+          "quantity": 37
+        }
+      ],
+      "awake1": [
+        {
+          "material": "niss-steel",
+          "quantity": 4
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": 6
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 36
+        },
+        {
+          "material": "shadow-t1-spectra",
+          "quantity": 90
+        },
+        {
+          "material": "niss-will",
+          "quantity": 4
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 6
+        },
+        {
+          "material": "shadow-t1-spectra",
+          "quantity": 30
+        },
+        {
+          "material": "niss-shadow",
+          "quantity": 4
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 6
+        },
+        {
+          "material": "shadow-t1-spectra",
+          "quantity": 45
+        }
+      ],
+      "awake2": [],
+      "awake3": []
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "senja",
+    "name": "Senja",
+    "materials": {
+      "unlock": [
+        {
+          "material": "senja-storm",
+          "quantity": 3
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 15
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 45
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 112
+        },
+        {
+          "material": "senja-might",
+          "quantity": 3
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 15
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 75
+        },
+        {
+          "material": "senja-glory",
+          "quantity": 3
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 15
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 75
+        }
+      ],
+      "awake1": [
+        {
+          "material": "senja-storm",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 18
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 54
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 135
+        },
+        {
+          "material": "senja-might",
+          "quantity": 4
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 18
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 90
+        },
+        {
+          "material": "senja-glory",
+          "quantity": 4
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 18
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 90
+        }
+      ],
+      "awake2": [],
+      "awake3": []
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "wingrave",
+    "name": "Wingrave",
+    "materials": {
+      "unlock": [
+        {
+          "material": "wingrave-faith",
+          "quantity": 3
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 5
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 50
+        },
+        {
+          "material": "wingrave-courage",
+          "quantity": 3
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 5
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 25
+        },
+        {
+          "material": "wingrave-prowess",
+          "quantity": 3
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 5
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 37
+        }
+      ],
+      "awake1": [
+        {
+          "material": "wingrave-faith",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 6
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 24
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 60
+        },
+        {
+          "material": "wingrave-courage",
+          "quantity": 4
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 6
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 30
+        },
+        {
+          "material": "wingrave-prowess",
+          "quantity": 4
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 6
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 45
+        }
+      ],
+      "awake2": [],
+      "awake3": []
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "silo",
+    "name": "Silo",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silo-precision",
+          "quantity": 3
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": 5
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 50
+        },
+        {
+          "material": "silo-cunning",
+          "quantity": 3
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 5
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 25
+        },
+        {
+          "material": "silo-speed",
+          "quantity": 3
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 5
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 37
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  },
+  {
+    "id": "venomess",
+    "name": "Venomess",
+    "materials": {
+      "unlock": [
+        {
+          "material": "ven-duty",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 15
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 45
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 112
+        },
+        {
+          "material": "ven-guile",
+          "quantity": 3
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 15
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 50
+        },
+        {
+          "material": "ven-venom",
+          "quantity": 4
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 15
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 75
+        }
+      ],
+      "awake1": [],
+      "awake2": [
+        {
+          "material": "ven-duty",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 18
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 45
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 112
+        },
+        {
+          "material": "ven-guile",
+          "quantity": 4
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 18
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 70
+        },
+        {
+          "material": "ven-venom",
+          "quantity": 4
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 15
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 75
+        }
+      ],
+      "awake3": []
+    },
+    "unlocked": 0,
+    "awaken1": 0,
+    "awaken2": 0,
+    "awaken3": 0
+  }
+]
