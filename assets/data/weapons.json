@@ -64,10 +64,10 @@
       "awake3": [
       ]
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "windmother-fang",
@@ -134,10 +134,10 @@
       "awake3": [
       ]
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "harvest-moon",
@@ -204,9 +204,9 @@
       "awake3": [
       ]
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   }
 ]
