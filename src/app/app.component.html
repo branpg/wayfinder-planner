@@ -1,3 +1,9 @@
+<div class="alert alert-warning" *ngIf="!submitData">
+    I'm missing some awakening costs. Do you know them? <button class="btn btn-primary btn-sm" (click)="submitData = !submitData">Send me</button>
+</div>
+<div class="alert alert-info" *ngIf="submitData">
+    Green rows are the ones already complete. Just fill the columns you can check and hit the Send data button on the bottom. Some materials are more than one time as they are required on multiple recipes.
+</div>
 <ng-container  *ngIf="submitData">
     <table class="table table-bordered">
         <ng-container *ngFor="let item of this.dataSubmitTable">
