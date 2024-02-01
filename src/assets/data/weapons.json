@@ -128,6 +128,58 @@
         }
       ],
       "awake1": [
+        {
+          "material": "silver-spectra",
+          "quantity": 126
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 29
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": 4
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 126
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 29
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "archon-prisma",
+          "quantity": 4
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 126
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 29
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 4
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": 4
+        },
+        {
+          "material": "windmother-fang-essence",
+          "quantity": 3
+        }
       ],
       "awake2": [
       ],
