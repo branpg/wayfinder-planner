@@ -92,10 +92,10 @@
       "awake3": [
       ]
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "niss",
@@ -188,10 +188,10 @@
       "awake2": [],
       "awake3": []
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "senja",
@@ -284,10 +284,10 @@
       "awake2": [],
       "awake3": []
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "wingrave",
@@ -380,10 +380,10 @@
       "awake2": [],
       "awake3": []
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "silo",
@@ -435,10 +435,10 @@
       "awake2": [],
       "awake3": []
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   },
   {
     "id": "venomess",
@@ -487,53 +487,12 @@
         }
       ],
       "awake1": [],
-      "awake2": [
-        {
-          "material": "ven-duty",
-          "quantity": 4
-        },
-        {
-          "material": "archaic-bone",
-          "quantity": 18
-        },
-        {
-          "material": "shadow-t2-spectra",
-          "quantity": 45
-        },
-        {
-          "material": "flora-t2-spectra",
-          "quantity": 112
-        },
-        {
-          "material": "ven-guile",
-          "quantity": 4
-        },
-        {
-          "material": "trickster-coin",
-          "quantity": 18
-        },
-        {
-          "material": "flora-t2-spectra",
-          "quantity": 70
-        },
-        {
-          "material": "ven-venom",
-          "quantity": 4
-        },
-        {
-          "material": "gem-avarice",
-          "quantity": 15
-        },
-        {
-          "material": "flora-t2-spectra",
-          "quantity": 75
-        }
-      ],
+      "awake2": [],
       "awake3": []
     },
-    "unlocked": 0,
-    "awaken1": 0,
-    "awaken2": 0,
-    "awaken3": 0
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
   }
 ]

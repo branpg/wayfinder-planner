@@ -9,6 +9,8 @@ import {Weapon} from "./weapon";
 import {Accessory} from "./accessory";
 import {AccessoryMaterials} from "./accessory_materials";
 import {Artifact} from "./artifact";
+import {Materials} from "./materials";
+import {WeaponMaterials} from "./weapon_materials";
 
 @Component({
     selector: 'app-root',
@@ -38,6 +40,9 @@ export class AppComponent {
     mutators:{[id: string]: Mutator} = {};
     completed: string[] = JSON.parse(localStorage.getItem('completed') ?? '[]');
     tracking: string[] = JSON.parse(localStorage.getItem('tracking') ?? '[]');
+    submitData = false
+    dataSubmitTable: {id:string, name:string, rows: (string|number)[][], disabledColumns: number[], columnLevels:{[col:number]:string}}[] = [];
+    dataToSubmit: {[id:string]:{[level:string]:{[index:number]:number}}} = {};
 
     constructor(
         private http: HttpClient
@@ -147,6 +152,49 @@ export class AppComponent {
         }
         for (let id of this.tracking) {
             this.items[id].is_tracked = true;
+        }
+
+        for (let item of Object.values(this.items)) {
+            let rows:(number|string)[][] = [['Material']];
+            let disabledColumns:number[] = [];
+            let columnLevels:{[col:number]:string} = {};
+            let fullData = true;
+            for (let material of this.getBaseMaterials(item)) {
+                rows.push([this.materials[material.material].name]);
+            }
+            this.dataToSubmit[item.id] = {};
+            for (let key of Object.keys(item.materials)) {
+                this.dataToSubmit[item.id][key] = {};
+                columnLevels[rows[0].length] = key;
+                let materials = item.materials[key];
+                rows[0].push(key)
+                for (let i = 1; i <= this.getBaseMaterials(item).length; i++) {
+                    let quantity = materials.at(i-1)?.quantity ?? 0;
+                    rows[i].push(quantity);
+                    if (quantity === 0) {
+                        this.dataToSubmit[item.id][key][i-1] = 0
+                    }
+                }
+                if (Object.values(this.dataToSubmit[item.id][key]).length === 0) {
+                    delete this.dataToSubmit[item.id][key];
+                }
+                if (materials.length > 0) {
+                    disabledColumns.push(rows[0].length - 1);
+                } else {
+                    fullData = false;
+                }
+            }
+            if (fullData) {
+                delete this.dataToSubmit[item.id];
+            } else {
+                this.dataSubmitTable.push({
+                    id: item.id,
+                    name: item.name,
+                    rows: rows,
+                    disabledColumns: disabledColumns,
+                    columnLevels: columnLevels
+                });
+            }
         }
         this.refreshCraftables();
     }
@@ -291,6 +339,9 @@ export class AppComponent {
                 case 'accessory':
                     this.requireAccessoryMaterials(item as Accessory);
                     break;
+                case 'artifact':
+                    this.requireArtifactMaterials(item as Artifact);
+                    break;
                 default:
                     this.alerts.push('Tracking an item of type '+item.type);
             }
@@ -300,49 +351,59 @@ export class AppComponent {
     }
 
     requireWayfinderMaterials = (wayfinder:Wayfinder) => {
-        if (!this.requireMaterials(wayfinder.materials.unlock)) {
-            this.alerts.push('Unknown materials for '+wayfinder.name+' unlock');
-        }
-        if (!this.requireMaterials(wayfinder.materials.awake1)) {
-            this.alerts.push('Unknown materials for '+wayfinder.name+' awakening 1');
-        }
-        if (!this.requireMaterials(wayfinder.materials.awake2)) {
-            this.alerts.push('Unknown materials for '+wayfinder.name+' awakening 2');
-        }
-        if (!this.requireMaterials(wayfinder.materials.awake3)) {
-            this.alerts.push('Unknown materials for '+wayfinder.name+' awakening 3');
+        if (!wayfinder.unlocked) {
+            if (!this.requireMaterials(wayfinder.materials.unlock)) {
+                this.alerts.push('Unknown materials for '+wayfinder.name+' unlock');
+            }
+        } else if (!wayfinder.awakened1) {
+            if (!this.requireMaterials(wayfinder.materials.awake1)) {
+                this.alerts.push('Unknown materials for '+wayfinder.name+' awakening 1');
+            }
+        } else if (!wayfinder.awakened2) {
+            if (!this.requireMaterials(wayfinder.materials.awake2)) {
+                this.alerts.push('Unknown materials for '+wayfinder.name+' awakening 2');
+            }
+        } else if (!wayfinder.awakened3) {
+            if (!this.requireMaterials(wayfinder.materials.awake3)) {
+                this.alerts.push('Unknown materials for '+wayfinder.name+' awakening 3');
+            }
         }
         this.alerts = [...new Set(this.alerts)];
     }
 
     requireWeaponMaterials = (weapon:Weapon) => {
-        if (!this.requireMaterials(weapon.materials.unlock)) {
-            this.alerts.push('Unknown materials for '+weapon.name+' unlock');
-        }
-        if (!this.requireMaterials(weapon.materials.awake1)) {
-            this.alerts.push('Unknown materials for '+weapon.name+' awakening 1');
-        }
-        if (!this.requireMaterials(weapon.materials.awake2)) {
-            this.alerts.push('Unknown materials for '+weapon.name+' awakening 2');
-        }
-        if (!this.requireMaterials(weapon.materials.awake3)) {
-            this.alerts.push('Unknown materials for '+weapon.name+' awakening 3');
+        if (!weapon.unlocked) {
+            if (!this.requireMaterials(weapon.materials.unlock)) {
+                this.alerts.push('Unknown materials for '+weapon.name+' unlock');
+            }
+        } else if (!weapon.awakened1) {
+            if (!this.requireMaterials(weapon.materials.awake1)) {
+                this.alerts.push('Unknown materials for '+weapon.name+' awakening 1');
+            }
+        } else if (!weapon.awakened2) {
+            if (!this.requireMaterials(weapon.materials.awake2)) {
+                this.alerts.push('Unknown materials for '+weapon.name+' awakening 2');
+            }
+        } else if (!weapon.awakened3) {
+            if (!this.requireMaterials(weapon.materials.awake3)) {
+                this.alerts.push('Unknown materials for '+weapon.name+' awakening 3');
+            }
         }
         this.alerts = [...new Set(this.alerts)];
     }
 
     requireAccessoryMaterials = (accessory:Accessory) => {
         if (!this.requireMaterials(accessory.materials.get)) {
-            this.alerts.push('Unknown materials for '+accessory.name+' unlock');
+            this.alerts.push('Unknown materials for '+accessory.name);
         }
         this.alerts = [...new Set(this.alerts)];
     }
 
-    refreshTracking = () => {
-        this.required_materials = {};
-        for(let wayfinder of this.wayfinders) {
-            this.trackItem(wayfinder);
+    requireArtifactMaterials = (artifact:Artifact) => {
+        if (!this.requireMaterials(artifact.materials.craft)) {
+            this.alerts.push('Unknown materials for '+artifact.name);
         }
+        this.alerts = [...new Set(this.alerts)];
     }
 
     requireMaterials = (requiredMaterials: {material:string, quantity: number}[]): boolean => {
@@ -454,8 +515,7 @@ export class AppComponent {
                     text: wayfinder.name + ' can be unlocked'
                 })
             }
-        }
-        if (!wayfinder.awakened1 && wayfinder.materials.awake1.length > 0) {
+        } else if (!wayfinder.awakened1 && wayfinder.materials.awake1.length > 0) {
             let complete = true;
             for (let material of wayfinder.materials.awake1) {
                 if (this.inventory[material.material] < material.quantity) {
@@ -469,8 +529,7 @@ export class AppComponent {
                     text: wayfinder.name + ' can be awakened to 1 stars'
                 })
             }
-        }
-        if (!wayfinder.awakened2 && wayfinder.materials.awake2.length > 0) {
+        } else if (!wayfinder.awakened2 && wayfinder.materials.awake2.length > 0) {
             let complete = true;
             for (let material of wayfinder.materials.awake2) {
                 if (this.inventory[material.material] < material.quantity) {
@@ -484,8 +543,7 @@ export class AppComponent {
                     text: wayfinder.name + ' can be awakened to 2 stars'
                 })
             }
-        }
-        if (!wayfinder.awakened3 && wayfinder.materials.awake3.length > 0) {
+        } else if (!wayfinder.awakened3 && wayfinder.materials.awake3.length > 0) {
             let complete = true;
             for (let material of wayfinder.materials.awake3) {
                 if (this.inventory[material.material] < material.quantity) {
@@ -517,8 +575,7 @@ export class AppComponent {
                     text: weapon.name + ' can be unlocked'
                 })
             }
-        }
-        if (!weapon.awakened1 && weapon.materials.awake1.length > 0) {
+        } else if (!weapon.awakened1 && weapon.materials.awake1.length > 0) {
             let complete = true;
             for (let material of weapon.materials.awake1) {
                 if (this.inventory[material.material] < material.quantity) {
@@ -532,8 +589,7 @@ export class AppComponent {
                     text: weapon.name + ' can be awakened to 1 stars'
                 })
             }
-        }
-        if (!weapon.awakened2 && weapon.materials.awake2.length > 0) {
+        } else if (!weapon.awakened2 && weapon.materials.awake2.length > 0) {
             let complete = true;
             for (let material of weapon.materials.awake2) {
                 if (this.inventory[material.material] < material.quantity) {
@@ -547,8 +603,7 @@ export class AppComponent {
                     text: weapon.name + ' can be awakened to 2 stars'
                 })
             }
-        }
-        if (!weapon.awakened3 && weapon.materials.awake3.length > 0) {
+        } else if (!weapon.awakened3 && weapon.materials.awake3.length > 0) {
             let complete = true;
             for (let material of weapon.materials.awake3) {
                 if (this.inventory[material.material] < material.quantity) {
@@ -606,13 +661,26 @@ export class AppComponent {
     }
 
     completeItem = (item:Item) => {
+        let materials;
         switch (item.type) {
             case 'wayfinder':
-                this.completeWayfinder(item as Wayfinder);
+                materials = this.completeWayfinder(item as Wayfinder);
                 break;
             case 'weapon':
-                this.completeWeapon(item as Weapon);
+                materials = this.completeWeapon(item as Weapon);
                 break;
+            case 'accessory':
+                materials = this.completeAccessory(item as Accessory);
+                break;
+            case 'artifact':
+                materials = this.completeArtifact(item as Artifact);
+                break;
+            default:
+                alert('Completed unexpected type '+item.name);
+                return;
+        }
+        for (let material of materials) {
+            this.updateInventory(material.material, -material.quantity);
         }
         localStorage.setItem('completed', JSON.stringify(this.completed));
         this.refreshCraftables();
@@ -621,28 +689,119 @@ export class AppComponent {
     completeWayfinder = (wayfinder:Wayfinder) => {
         if (!wayfinder.unlocked) {
             wayfinder.unlocked = true;
+            this.changedUnlocked(wayfinder);
+            return wayfinder.materials.unlock;
         } else if (!wayfinder.awakened1) {
             wayfinder.awakened1 = true;
+            this.changedAwakened1(wayfinder);
+            return wayfinder.materials.awake1;
         } else if (!wayfinder.awakened2) {
             wayfinder.awakened2 = true;
-        } else if (!wayfinder.awakened3) {
+            this.changedAwakened2(wayfinder);
+            return wayfinder.materials.awake2;
+        } else {
             wayfinder.awakened3 = true;
+            this.changedAwakened3(wayfinder);
+            return wayfinder.materials.awake3;
         }
     }
 
     completeWeapon = (weapon:Weapon) => {
         if (!weapon.unlocked) {
             weapon.unlocked = true;
+            this.changedUnlocked(weapon);
+            return weapon.materials.unlock;
         } else if (!weapon.awakened1) {
             weapon.awakened1 = true;
+            this.changedAwakened1(weapon);
+            return weapon.materials.awake1;
         } else if (!weapon.awakened2) {
             weapon.awakened2 = true;
-        } else if (!weapon.awakened3) {
+            this.changedAwakened2(weapon);
+            return weapon.materials.awake2;
+        } else {
             weapon.awakened3 = true;
+            this.changedAwakened3(weapon);
+            return weapon.materials.awake3;
+        }
+    }
+
+    completeAccessory = (accessory:Accessory) => {
+        accessory.gotten = true;
+        this.changedGotten(accessory);
+        return accessory.materials.get;
+    }
+
+    completeArtifact = (artifact:Artifact) => {
+        artifact.crafted = true;
+        this.changedCrafted(artifact);
+        return artifact.materials.craft
+    }
+
+    getBaseMaterials = (item:Item):{material:string, quantity:number}[] => {
+        switch (item.type) {
+            case 'wayfinder':
+                return (item as Wayfinder).materials.unlock;
+            case 'weapon':
+                return (item as Weapon).materials.unlock;
+        }
+        return [];
+    }
+
+    addDataToSubmit = (id:string, level:string, index:number, quantity:number) => {
+        this.dataToSubmit[id][level][index] = quantity;
+    }
+
+    sendData = () => {
+        let data:{[id:string]: {[id:string]: Item}} = {};
+        for (let itemId of Object.keys(this.dataToSubmit)) {
+            let itemData = this.dataToSubmit[itemId];
+            let item = this.items[itemId];
+            for (let level of Object.keys(itemData)) {
+                let hasData = false;
+                let hasAllData = true;
+                for (let quantity of Object.values(itemData[level])) {
+                    if (quantity === 0) {
+                        hasAllData = false;
+                    } else {
+                        hasData = true;
+                    }
+                }
+                if (hasData) {
+                    if (hasAllData) {
+                        if (!data[this.items[itemId].type]) {
+                            data[this.items[itemId].type] = {};
+                        }
+                        if (!data[this.items[itemId].type][itemId]) {
+                            data[this.items[itemId].type][itemId] = item;
+                        }
+                        let materials = this.getBaseMaterials(item);
+                        for (let i = 0;i < materials.length;i++) {
+                            materials[i].quantity = itemData[level][i];
+                        }
+                        item.materials[level] = materials;
+                    } else {
+                        console.log(Object.values(itemData[level]));
+                        alert('Missing data for '+this.items[itemId].name+' '+level);
+                    }
+                }
+            }
+        }
+        if (Object.values(data).length === 0) {
+            alert('Empty form');
+        } else {
+            console.log(
+                btoa(JSON.stringify(data)),
+                data
+            );
+            navigator.clipboard.writeText(btoa(JSON.stringify(data)));
+            window.open('https://forms.gle/tTW52Vjcj3afuxZ38');
+            this.submitData = false;
         }
     }
 
     protected readonly JSON = JSON;
     protected readonly Object = Object;
     protected readonly Array = Array;
+    protected readonly isNaN = isNaN;
 }

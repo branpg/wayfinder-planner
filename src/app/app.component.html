@@ -1,143 +1,175 @@
-<div class="container-fluid">
-    <div class="alert alert-danger alert-dismissible" *ngFor="let alert of alerts">
-        {{ alert }}
-    </div>
-    <div class="alert alert-success" *ngFor="let craftable_item of craftable_items">
-        {{ craftable_item.text }}
-        <button class="btn btn-success ms-3" (click)="completeItem(craftable_item.item)" data-bs-dismiss="alert">Done</button>
-    </div>
-    <div class="card" *ngIf="sorted_zones.length > 0">
-        <ng-container *ngFor="let zone of sorted_zones">
-            <div class="card-header">
-                {{ zones[zone.zone_id].name }}
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-start" *ngFor="let material of zone.materials | keyvalue">
-                    {{ inventory[material.key] }}/{{ material.value }}
-                    -
-                    <span *ngIf="materials[material.key].mutator">
-                        <span class="badge bg-secondary me-1" *ngFor="let i of Array(materials[material.key].mutator.tier)">
-                            {{ mutators[materials[material.key].mutator.id].name }}
-                        </span>
-                    </span>
-                    {{ materials[material.key].name }}
-                    <div class="float-end">
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(material.key, -quantity.value);quantity.value = '1';">-</button>
-                            <input type="text" class="form-control text-center" #quantity value="1">
-                            <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(material.key, +quantity.value);quantity.value = '1'">+</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+<ng-container  *ngIf="submitData">
+    <table class="table table-bordered">
+        <ng-container *ngFor="let item of this.dataSubmitTable">
+            <tr>
+                <th [colSpan]="item.rows[0].length" class="p-3 bg-secondary-subtle">{{ item.name }}</th>
+            </tr>
+            <tr *ngFor="let row of item.rows;let rowIndex = index">
+                <td
+                    *ngFor="let cell of row;let colIndex = index"
+                    class="
+                        {{rowIndex === 0 ? 'bg-secondary' : ''}}
+                        {{colIndex !== 0 ? 'col-2' : 'col'}}
+                        {{rowIndex !== 0 && item.disabledColumns.includes(colIndex) ? 'bg-success-subtle' : ''}}
+                    "
+                >
+                    <input
+                        [ngModel]="cell"
+                        *ngIf="!isNaN(+cell) && !item.disabledColumns.includes(colIndex)"
+                        class="w-100 form-control"
+                        #input
+                        (ngModelChange)="addDataToSubmit(item.id, item.columnLevels[colIndex], rowIndex - 1, +input.value)"
+                    >
+                    <ng-container *ngIf="isNaN(+cell) || item.disabledColumns.includes(colIndex)">{{ cell }}</ng-container>
+                </td>
+            </tr>
         </ng-container>
+    </table>
+    <div class="container text-center">
+        <button class="btn btn-primary mb-3" (click)="sendData()">Send data</button>
     </div>
-    <h2 class="my-3">Configure</h2>
-    <div class="card">
+</ng-container>
+<div class="alert alert-danger alert-dismissible" *ngFor="let alert of alerts">
+    {{ alert }}
+    <ng-container *ngIf="!submitData">
+        - Do you know the materials? <button class="btn btn-primary btn-sm" (click)="submitData = !submitData">Send me</button>
+    </ng-container>
+</div>
+<div class="alert alert-success" *ngFor="let craftable_item of craftable_items">
+    {{ craftable_item.text }}
+    <button class="btn btn-success ms-3" (click)="completeItem(craftable_item.item)" data-bs-dismiss="alert">Done</button>
+</div>
+<div class="card" *ngIf="sorted_zones.length > 0">
+    <ng-container *ngFor="let zone of sorted_zones">
         <div class="card-header">
-            Wayfinders
+            {{ zones[zone.zone_id].name }}
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item text-start" *ngFor="let wayfinder of wayfinders">
-                <div class="form-check form-switch d-inline-block me-3">
-                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.is_tracked" (ngModelChange)="changedTracked(wayfinder)">
-                    <label class="form-check-label">{{ wayfinder.name }}</label>
-                </div>
-                <div class="float-end">
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.unlocked" (ngModelChange)="changedUnlocked(wayfinder)">
-                        <label class="form-check-label">Unlocked</label>
-                    </div>
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened1" (ngModelChange)="changedAwakened1(wayfinder)" [disabled]="!wayfinder.unlocked">
-                        <label class="form-check-label">Awakened 1</label>
-                    </div>
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened2" (ngModelChange)="changedAwakened2(wayfinder)" [disabled]="!wayfinder.awakened1">
-                        <label class="form-check-label">Awakened 2</label>
-                    </div>
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened3" (ngModelChange)="changedAwakened3(wayfinder)" [disabled]="!wayfinder.awakened2">
-                        <label class="form-check-label">Awakened 3</label>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="card-header">
-            Weapons
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item text-start" *ngFor="let weapon of weapons">
-                <div class="form-check form-switch d-inline-block me-3">
-                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.is_tracked" (ngModelChange)="changedTracked(weapon)">
-                    <label class="form-check-label">{{ weapon.name }}</label>
-                </div>
-                <div class="float-end">
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.unlocked" (ngModelChange)="changedUnlocked(weapon)">
-                        <label class="form-check-label">Unlocked</label>
-                    </div>
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened1" (ngModelChange)="changedAwakened1(weapon)" [disabled]="!weapon.unlocked">
-                        <label class="form-check-label">Awakened 1</label>
-                    </div>
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened2" (ngModelChange)="changedAwakened2(weapon)" [disabled]="!weapon.awakened1">
-                        <label class="form-check-label">Awakened 2</label>
-                    </div>
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened3" (ngModelChange)="changedAwakened3(weapon)" [disabled]="!weapon.awakened2">
-                        <label class="form-check-label">Awakened 3</label>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="card-header">
-            Accessories
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item text-start" *ngFor="let accesory of accessories">
-                <div class="form-check form-switch d-inline-block me-3">
-                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="accesory.is_tracked" (ngModelChange)="changedTracked(accesory)">
-                    <label class="form-check-label">{{ accesory.name }}</label>
-                </div>
-                <div class="float-end">
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="accesory.gotten" (ngModelChange)="changedGotten(accesory)">
-                        <label class="form-check-label">Gotten</label>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="card-header">
-            Accessories
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item text-start" *ngFor="let artifact of artifacts">
-                <div class="form-check form-switch d-inline-block me-3">
-                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="artifact.is_tracked" (ngModelChange)="changedCrafted(artifact)">
-                    <label class="form-check-label">{{ artifact.name }}</label>
-                </div>
-                <div class="float-end">
-                    <div class="form-check form-switch d-inline-block me-3">
-                        <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="artifact.crafted" (ngModelChange)="changedCrafted(artifact)">
-                        <label class="form-check-label">Crafted</label>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <h2 class="my-3">Inventory</h2>
-    <div class="card">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item text-start" *ngFor="let material of materials | keyvalue">
-                {{ material.value.name }}
+            <li class="list-group-item text-start" *ngFor="let material of zone.materials | keyvalue">
+                {{ inventory[material.key] }}/{{ material.value }}
+                -
+                <span *ngIf="materials[material.key].mutator">
+                    <span class="badge bg-secondary me-1" *ngFor="let i of Array(materials[material.key].mutator.tier)">
+                        {{ mutators[materials[material.key].mutator.id].name }}
+                    </span>
+                </span>
+                {{ materials[material.key].name }}
                 <div class="float-end">
                     <div class="input-group">
-                        <input type="text" class="form-control text-center" [(ngModel)]="inventory[material.key]" (ngModelChange)="updateInventory(material.key, 0);refreshTracking()">
+                        <span class="input-group-text">Add: </span>
+                        <input type="text" class="form-control text-center" #quantity value="1">
+                        <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(material.key, +quantity.value);quantity.value = '1'">+</button>
                     </div>
                 </div>
             </li>
         </ul>
+    </ng-container>
+</div>
+<h2 class="my-3">Configure</h2>
+<div class="card">
+    <div class="card-header">
+        Wayfinders
     </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-start" *ngFor="let wayfinder of wayfinders">
+            <div class="form-check form-switch d-inline-block me-3">
+                <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.is_tracked" (ngModelChange)="changedTracked(wayfinder)">
+                <label class="form-check-label">{{ wayfinder.name }}</label>
+            </div>
+            <div class="float-end">
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.unlocked" (ngModelChange)="changedUnlocked(wayfinder)">
+                    <label class="form-check-label">Unlocked</label>
+                </div>
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened1" (ngModelChange)="changedAwakened1(wayfinder)" [disabled]="!wayfinder.unlocked">
+                    <label class="form-check-label">Awakened 1</label>
+                </div>
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened2" (ngModelChange)="changedAwakened2(wayfinder)" [disabled]="!wayfinder.awakened1">
+                    <label class="form-check-label">Awakened 2</label>
+                </div>
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened3" (ngModelChange)="changedAwakened3(wayfinder)" [disabled]="!wayfinder.awakened2">
+                    <label class="form-check-label">Awakened 3</label>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="card-header">
+        Weapons
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-start" *ngFor="let weapon of weapons">
+            <div class="form-check form-switch d-inline-block me-3">
+                <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.is_tracked" (ngModelChange)="changedTracked(weapon)">
+                <label class="form-check-label">{{ weapon.name }}</label>
+            </div>
+            <div class="float-end">
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.unlocked" (ngModelChange)="changedUnlocked(weapon)">
+                    <label class="form-check-label">Unlocked</label>
+                </div>
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened1" (ngModelChange)="changedAwakened1(weapon)" [disabled]="!weapon.unlocked">
+                    <label class="form-check-label">Awakened 1</label>
+                </div>
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened2" (ngModelChange)="changedAwakened2(weapon)" [disabled]="!weapon.awakened1">
+                    <label class="form-check-label">Awakened 2</label>
+                </div>
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened3" (ngModelChange)="changedAwakened3(weapon)" [disabled]="!weapon.awakened2">
+                    <label class="form-check-label">Awakened 3</label>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="card-header">
+        Accessories
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-start" *ngFor="let accesory of accessories">
+            <div class="form-check form-switch d-inline-block me-3">
+                <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="accesory.is_tracked" (ngModelChange)="changedTracked(accesory)">
+                <label class="form-check-label">{{ accesory.name }}</label>
+            </div>
+            <div class="float-end">
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="accesory.gotten" (ngModelChange)="changedGotten(accesory)">
+                    <label class="form-check-label">Gotten</label>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="card-header">
+        Accessories
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-start" *ngFor="let artifact of artifacts">
+            <div class="form-check form-switch d-inline-block me-3">
+                <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="artifact.is_tracked" (ngModelChange)="changedCrafted(artifact)">
+                <label class="form-check-label">{{ artifact.name }}</label>
+            </div>
+            <div class="float-end">
+                <div class="form-check form-switch d-inline-block me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="artifact.crafted" (ngModelChange)="changedCrafted(artifact)">
+                    <label class="form-check-label">Crafted</label>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<h2 class="my-3">Inventory</h2>
+<div class="card">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-start" *ngFor="let material of materials | keyvalue">
+            {{ material.value.name }}
+            <div class="float-end">
+                <div class="input-group">
+                    <input type="text" class="form-control text-center" [(ngModel)]="inventory[material.key]" (ngModelChange)="updateInventory(material.key, 0)">
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
