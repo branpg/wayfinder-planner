@@ -431,7 +431,48 @@
           "quantity": 37
         }
       ],
-      "awake1": [],
+      "awake1": [
+        {
+          "material": "silo-precision",
+          "quantity": 4
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": 6
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 24
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 60
+        },
+        {
+          "material": "silo-cunning",
+          "quantity": 4
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 6
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 30
+        },
+        {
+          "material": "silo-speed",
+          "quantity": 4
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 6
+        },
+        {
+          "material": "chaos-t1-spectra",
+          "quantity": 45
+        }
+      ],
       "awake2": [],
       "awake3": []
     },
