@@ -60,6 +60,58 @@
       "awake1": [
       ],
       "awake2": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 165
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 4
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": 4
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 165
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 4
+        },
+        {
+          "material": "storm-twins-ire",
+          "quantity": 4
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 165
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": 4
+        },
+        {
+          "material": "umbros-essence",
+          "quantity": 5
+        }
       ],
       "awake3": [
       ]
@@ -250,6 +302,58 @@
         }
       ],
       "awake1": [
+        {
+          "material": "silver-spectra",
+          "quantity": 174
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 4
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 174
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 4
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 174
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 4
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 4
+        },
+        {
+          "material": "harvest-moon-essence",
+          "quantity": 3
+        }
       ],
       "awake2": [
       ],

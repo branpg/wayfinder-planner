@@ -46,6 +46,46 @@
         }
       ],
       "awake1": [
+        {
+          "material": "kyros-sorcery",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 18
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 54
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 135
+        },
+        {
+          "material": "kyros-secrets",
+          "quantity": 4
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 18
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 90
+        },
+        {
+          "material": "kyros-sight",
+          "quantity": 4
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 18
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 90
+        }
       ],
       "awake2": [
         {
