@@ -568,7 +568,48 @@
           "quantity": 45
         }
       ],
-      "awake2": [],
+      "awake2": [
+        {
+          "material": "wingrave-faith",
+          "quantity": 4
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": 6
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 28
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 70
+        },
+        {
+          "material": "wingrave-courage",
+          "quantity": 4
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 6
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 35
+        },
+        {
+          "material": "wingrave-prowess",
+          "quantity": 4
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 6
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": 53
+        }
+      ],
       "awake3": []
     },
     "unlocked": false,
