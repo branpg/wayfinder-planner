@@ -43,16 +43,16 @@
   },
   {
     "id": "ven-venom",
-    "name": "Vestige of Ven's guile",
+    "name": "Vestige of Ven's venom",
     "zones": [
       "deceiver-maras"
     ]
   },
   {
     "id": "ven-duty",
-    "name": "Vestige of Ven's guile",
+    "name": "Vestige of Ven's duty",
     "zones": [
-      "todo"
+      "storm-twins"
     ]
   },
   {
@@ -126,10 +126,24 @@
     ]
   },
   {
-    "id": "windmother-fang-essence",
-    "name": "Windmother's fang essence",
+    "id": "archstorm-essence",
+    "name": "Archstorm essence",
     "zones": [
-      "argent-hand"
+      "first"
+    ]
+  },
+  {
+    "id": "bastion-essence",
+    "name": "Bastion essence",
+    "zones": [
+      "first"
+    ]
+  },
+  {
+    "id": "bloodsong-essence",
+    "name": "Bloodsong essence",
+    "zones": [
+      "ryvn"
     ]
   },
   {
@@ -147,6 +161,13 @@
     ]
   },
   {
+    "id": "windmother-fang-essence",
+    "name": "Windmother's fang essence",
+    "zones": [
+      "argent-hand"
+    ]
+  },
+  {
     "id": "devourer-talon",
     "name": "Devourer's talon",
     "zones": [
@@ -158,6 +179,13 @@
     "name": "Prismatic arcanite",
     "zones": [
       "argent-hand"
+    ]
+  },
+  {
+    "id": "night-maw-viscera",
+    "name": "Night's maw viscera",
+    "zones": [
+      "night-maw"
     ]
   },
   {
@@ -186,6 +214,13 @@
     "name": "Storm twin's ire",
     "zones": [
       "storm-twins"
+    ]
+  },
+  {
+    "id": "master-call",
+    "name": "Master's call",
+    "zones": [
+      "beastmaster"
     ]
   },
   {

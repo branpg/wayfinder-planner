@@ -1,5 +1,337 @@
 [
   {
+    "id": "arcstorm",
+    "name": "Arcstorm",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 3
+        },
+        {
+          "material": "archstorm-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
+    "id": "bastion",
+    "name": "Bastion",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 27
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "master-call",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 27
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 27
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "master-call",
+          "quantity": 3
+        },
+        {
+          "material": "bastion-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
+    "id": "bloodsong",
+    "name": "Bloodsong",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 15
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 15
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "night-maw-viscera",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": 15
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 3
+        },
+        {
+          "material": "bloodsong-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
+    "id": "harvest-moon",
+    "name": "Harvest moon",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 3
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 3
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 17
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 3
+        },
+        {
+          "material": "harvest-moon-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+        {
+          "material": "silver-spectra",
+          "quantity": 174
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 4
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 174
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": 4
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": 4
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": 174
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": 20
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 4
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": 4
+        },
+        {
+          "material": "harvest-moon-essence",
+          "quantity": 3
+        }
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
     "id": "umbros",
     "name": "Umbros",
     "materials": {
@@ -230,128 +562,6 @@
         },
         {
           "material": "windmother-fang-essence",
-          "quantity": 3
-        }
-      ],
-      "awake2": [
-      ],
-      "awake3": [
-      ]
-    },
-    "unlocked": false,
-    "awaken1": false,
-    "awaken2": false,
-    "awaken3": false
-  },
-  {
-    "id": "harvest-moon",
-    "name": "Harvest moon",
-    "materials": {
-      "unlock": [
-        {
-          "material": "silver-spectra",
-          "quantity": 145
-        },
-        {
-          "material": "solar-t2-spectra",
-          "quantity": 17
-        },
-        {
-          "material": "gem-avarice",
-          "quantity": 3
-        },
-        {
-          "material": "radiant-octachron",
-          "quantity": 3
-        },
-        {
-          "material": "silver-spectra",
-          "quantity": 145
-        },
-        {
-          "material": "solar-t2-spectra",
-          "quantity": 17
-        },
-        {
-          "material": "gem-avarice",
-          "quantity": 3
-        },
-        {
-          "material": "devourer-talon",
-          "quantity": 3
-        },
-        {
-          "material": "silver-spectra",
-          "quantity": 145
-        },
-        {
-          "material": "solar-t2-spectra",
-          "quantity": 17
-        },
-        {
-          "material": "treasure-phoenix-down",
-          "quantity": 3
-        },
-        {
-          "material": "radiant-octachron",
-          "quantity": 3
-        },
-        {
-          "material": "harvest-moon-essence",
-          "quantity": 1
-        }
-      ],
-      "awake1": [
-        {
-          "material": "silver-spectra",
-          "quantity": 174
-        },
-        {
-          "material": "solar-t2-spectra",
-          "quantity": 20
-        },
-        {
-          "material": "gem-avarice",
-          "quantity": 4
-        },
-        {
-          "material": "radiant-octachron",
-          "quantity": 4
-        },
-        {
-          "material": "silver-spectra",
-          "quantity": 174
-        },
-        {
-          "material": "solar-t2-spectra",
-          "quantity": 20
-        },
-        {
-          "material": "gem-avarice",
-          "quantity": 4
-        },
-        {
-          "material": "devourer-talon",
-          "quantity": 4
-        },
-        {
-          "material": "silver-spectra",
-          "quantity": 174
-        },
-        {
-          "material": "solar-t2-spectra",
-          "quantity": 20
-        },
-        {
-          "material": "treasure-phoenix-down",
-          "quantity": 4
-        },
-        {
-          "material": "radiant-octachron",
-          "quantity": 4
-        },
-        {
-          "material": "harvest-moon-essence",
           "quantity": 3
         }
       ],
