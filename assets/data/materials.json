@@ -570,5 +570,26 @@
     "zones": [
       "beastmaster"
     ]
+  },
+  {
+    "id": "dread-legion-artifact-recipe",
+    "name": "Dread legion artifact recipe",
+    "zones": [
+      "dread-legion"
+    ]
+  },
+  {
+    "id": "reaver-king-artifact-recipe",
+    "name": "Reaver-king artifact recipe",
+    "zones": [
+      "reaver-king"
+    ]
+  },
+  {
+    "id": "first-artifact-recipe",
+    "name": "First artifact recipe",
+    "zones": [
+      "first"
+    ]
   }
 ]
