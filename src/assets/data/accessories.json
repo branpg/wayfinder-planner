@@ -28,6 +28,7 @@
   {
     "id": "hollow-heart",
     "name": "Hollow heart",
+    "is_crafted": true,
     "materials": {
       "get": [
         {
@@ -82,6 +83,7 @@
   {
     "id": "charred-antler-pendant",
     "name": "Charred antler pendant",
+    "is_crafted": true,
     "materials": {
       "get": [
         {
@@ -132,6 +134,7 @@
   {
     "id": "golden-stalker-claw",
     "name": "Golden stalker claw",
+    "is_crafted": true,
     "materials": {
       "get": [
         {
@@ -186,6 +189,7 @@
   {
     "id": "aturach-oath",
     "name": "Aturach's oath",
+    "is_crafted": true,
     "materials": {
       "get": [
         {

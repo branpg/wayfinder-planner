@@ -1,39 +1,95 @@
-<div class="alert alert-warning" *ngIf="!submitData">
-    I'm missing some awakening costs. Do you know them? <button class="btn btn-primary btn-sm" (click)="submitData = !submitData">Send me</button>
-</div>
-<div class="alert alert-info" *ngIf="submitData">
-    Green rows are the ones already complete. Just fill the columns you can check and hit the Send data button on the bottom. Some materials are more than one time as they are required on multiple recipes.
-</div>
-<ng-container  *ngIf="submitData">
-    <table class="table table-bordered">
-        <ng-container *ngFor="let item of this.dataSubmitTable">
-            <tr>
-                <th [colSpan]="item.rows[0].length" class="p-3 bg-secondary-subtle">{{ item.name }}</th>
-            </tr>
-            <tr *ngFor="let row of item.rows;let rowIndex = index">
-                <td
-                    *ngFor="let cell of row;let colIndex = index"
-                    class="
-                        {{rowIndex === 0 ? 'bg-secondary' : ''}}
-                        {{colIndex !== 0 ? 'col-2' : 'col'}}
-                        {{rowIndex !== 0 && item.disabledColumns.includes(colIndex) ? 'bg-success-subtle' : ''}}
-                    "
-                >
-                    <input
-                        [ngModel]="cell"
-                        *ngIf="!isNaN(+cell) && !item.disabledColumns.includes(colIndex)"
-                        class="w-100 form-control"
-                        #input
-                        (ngModelChange)="addDataToSubmit(item.id, item.columnLevels[colIndex], rowIndex - 1, +input.value)"
-                    >
-                    <ng-container *ngIf="isNaN(+cell) || item.disabledColumns.includes(colIndex)">{{ cell }}</ng-container>
-                </td>
-            </tr>
-        </ng-container>
-    </table>
-    <div class="container text-center">
-        <button class="btn btn-primary mb-3" (click)="sendData()">Send data</button>
+<ng-container *ngIf="isDevMode()">
+    <select class="form-select" [(ngModel)]="newItem.id" required (ngModelChange)="newItem = items[$event] ?? defaultNewItem">
+        <option value="">New item</option>
+        <option [value]="item.id" *ngFor="let item of Object.values(items) | sort:'name'">{{ item.name }}</option>
+    </select>
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control" [disabled]="true" [ngModel]="newItem.id">
+        </div>
+        <div class="col">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="newItem.name" (ngModelChange)="newItem.id = nameToId(String(newItem.name))">
+        </div>
     </div>
+    <div class="card mb-3" *ngFor="let tier of Object.keys(newItem.materials ?? {})">
+        <div class="card-header">
+            {{ tier | titlecase }}
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let material of newItem.materials[tier]">
+                <input type="hidden" #createMaterial value="0">
+                <div class="input-group">
+                    <button type="button" class="btn btn-primary btn-small" data-bs-toggle="modal" data-bs-target="#material-modal">
+                        New material
+                    </button>
+                    <select class="form-select" [(ngModel)]="material.material" required>
+                        <option value="">Select a material</option>
+                        <option [value]="material.id" *ngFor="let material of Object.values(materials) | sort:'name'">{{ material.name }}</option>
+                    </select>
+                    <input class="form-control" [(ngModel)]="material.quantity">
+                    <button class="btn btn-primary btn-small" (click)="newItem.materials[tier].push(Object.assign({}, material))">
+                        Copy material
+                    </button>
+                </div>
+            </li>
+        </ul>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-sm" (click)="newItem.materials[tier].push({material: '', quantity: 0})">Add material</button>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+            <button class="btn btn-primary btn-sm" (click)="navigator.clipboard.writeText(JSON.stringify(newItem));newItem = JSON.parse(JSON.stringify(defaultNewItem));newItem.materials = {unlock: [],awake1: [],awake2: [],awake3: []}">Copy item</button>
+        </div>
+        <div class="col" *ngIf="numberOfNewMaterials > 0">
+            <button class="btn btn-primary btn-sm" (click)="navigator.clipboard.writeText(JSON.stringify(Object.values(materials)));numberOfNewMaterials=0">Copy materials</button>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+</ng-container>
+<ng-container *ngIf="dataSubmitTable.length > 0">
+    <div class="alert alert-warning" *ngIf="!submitData">
+        I'm missing some awakening costs. Do you know them? <button class="btn btn-primary btn-sm" (click)="submitData = !submitData">Send me</button>
+    </div>
+    <div class="alert alert-info" *ngIf="submitData">
+        Green rows are the ones already complete. Just fill the columns you can check and hit the Send data button on the bottom. Some materials are more than one time as they are required on multiple recipes.
+    </div>
+    <ng-container  *ngIf="submitData">
+        <table class="table table-bordered">
+            <ng-container *ngFor="let item of dataSubmitTable | sort:'name'">
+                <tr>
+                    <th [colSpan]="item.rows[0].length" class="p-3 bg-secondary-subtle">{{ item.name }}</th>
+                </tr>
+                <tr *ngFor="let row of item.rows;let rowIndex = index">
+                    <td
+                        *ngFor="let cell of row;let colIndex = index"
+                        class="
+                            {{rowIndex === 0 ? 'bg-secondary' : ''}}
+                            {{colIndex !== 0 ? 'col-2' : 'col'}}
+                            {{rowIndex !== 0 && item.disabledColumns.includes(colIndex) ? 'bg-success-subtle' : ''}}
+                        "
+                    >
+                        <input
+                            [ngModel]="cell"
+                            *ngIf="!isNaN(+cell) && !item.disabledColumns.includes(colIndex)"
+                            class="w-100 form-control"
+                            #input
+                            (ngModelChange)="addDataToSubmit(item.id, item.columnLevels[colIndex], rowIndex - 1, +input.value)"
+                        >
+                        <ng-container *ngIf="isNaN(+cell) || item.disabledColumns.includes(colIndex)">{{ cell }}</ng-container>
+                    </td>
+                </tr>
+            </ng-container>
+        </table>
+        <div class="container text-center">
+            <button class="btn btn-primary mb-3" (click)="sendData()">Send data</button>
+        </div>
+    </ng-container>
 </ng-container>
 <div class="alert alert-danger alert-dismissible" *ngFor="let alert of alerts">
     {{ alert }}
@@ -42,13 +98,13 @@
     </ng-container>
 </div>
 <div class="alert alert-success" *ngFor="let craftable_item of craftable_items">
-    {{ craftable_item.text }}
+    <span [innerHTML]="craftable_item.text"></span>
     <button class="btn btn-success ms-3" (click)="completeItem(craftable_item.item)" data-bs-dismiss="alert">Done</button>
 </div>
 <div class="card" *ngIf="sorted_zones.length > 0">
     <ng-container *ngFor="let zone of sorted_zones">
         <div class="card-header">
-            {{ zones[zone.zone_id].name }}
+            {{ zones[zone.zone_id].name }} ({{ Object.keys(zone.materials).length }})
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item text-start" *ngFor="let material of zone.materials | keyvalue">
@@ -64,7 +120,7 @@
                     <div class="input-group">
                         <span class="input-group-text">Add: </span>
                         <input type="text" class="form-control text-center" #quantity value="1">
-                        <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(material.key, +quantity.value);quantity.value = '1'">+</button>
+                        <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(material.key, Number(quantity.value));quantity.value = '1'">+</button>
                     </div>
                 </div>
             </li>
@@ -77,7 +133,7 @@
         Wayfinders
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start" *ngFor="let wayfinder of wayfinders">
+        <li class="list-group-item text-start" *ngFor="let wayfinder of wayfinders | sort:'name'">
             <div class="form-check form-switch d-inline-block me-3">
                 <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.is_tracked" (ngModelChange)="changedTracked(wayfinder)">
                 <label class="form-check-label">{{ wayfinder.name }}</label>
@@ -89,15 +145,15 @@
                 </div>
                 <div class="form-check form-switch d-inline-block me-3">
                     <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened1" (ngModelChange)="changedAwakened1(wayfinder)" [disabled]="!wayfinder.unlocked">
-                    <label class="form-check-label">Awakened 1</label>
+                    <label class="form-check-label"><i class="bi bi-star-fill golden me-1"></i></label>
                 </div>
                 <div class="form-check form-switch d-inline-block me-3">
                     <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened2" (ngModelChange)="changedAwakened2(wayfinder)" [disabled]="!wayfinder.awakened1">
-                    <label class="form-check-label">Awakened 2</label>
+                    <label class="form-check-label"><i class="bi bi-star-fill golden me-1"></i><i class="bi bi-star-fill golden me-1"></i></label>
                 </div>
                 <div class="form-check form-switch d-inline-block me-3">
                     <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="wayfinder.awakened3" (ngModelChange)="changedAwakened3(wayfinder)" [disabled]="!wayfinder.awakened2">
-                    <label class="form-check-label">Awakened 3</label>
+                    <label class="form-check-label"><i class="bi bi-star-fill golden me-1"></i><i class="bi bi-star-fill golden me-1"></i><i class="bi bi-star-fill golden me-1"></i></label>
                 </div>
             </div>
         </li>
@@ -106,7 +162,7 @@
         Weapons
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start" *ngFor="let weapon of weapons">
+        <li class="list-group-item text-start" *ngFor="let weapon of weapons | sort:'name'">
             <div class="form-check form-switch d-inline-block me-3">
                 <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.is_tracked" (ngModelChange)="changedTracked(weapon)">
                 <label class="form-check-label">{{ weapon.name }}</label>
@@ -118,15 +174,15 @@
                 </div>
                 <div class="form-check form-switch d-inline-block me-3">
                     <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened1" (ngModelChange)="changedAwakened1(weapon)" [disabled]="!weapon.unlocked">
-                    <label class="form-check-label">Awakened 1</label>
+                    <label class="form-check-label"><i class="bi bi-star-fill golden me-1"></i></label>
                 </div>
                 <div class="form-check form-switch d-inline-block me-3">
                     <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened2" (ngModelChange)="changedAwakened2(weapon)" [disabled]="!weapon.awakened1">
-                    <label class="form-check-label">Awakened 2</label>
+                    <label class="form-check-label"><i class="bi bi-star-fill golden me-1"></i><i class="bi bi-star-fill golden me-1"></i></label>
                 </div>
                 <div class="form-check form-switch d-inline-block me-3">
                     <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="weapon.awakened3" (ngModelChange)="changedAwakened3(weapon)" [disabled]="!weapon.awakened2">
-                    <label class="form-check-label">Awakened 3</label>
+                    <label class="form-check-label"><i class="bi bi-star-fill golden me-1"></i><i class="bi bi-star-fill golden me-1"></i><i class="bi bi-star-fill golden me-1"></i></label>
                 </div>
             </div>
         </li>
@@ -135,7 +191,7 @@
         Accessories
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start" *ngFor="let accesory of accessories">
+        <li class="list-group-item text-start" *ngFor="let accesory of accessories | sort:'name'">
             <div class="form-check form-switch d-inline-block me-3">
                 <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="accesory.is_tracked" (ngModelChange)="changedTracked(accesory)">
                 <label class="form-check-label">{{ accesory.name }}</label>
@@ -152,7 +208,7 @@
         Accessories
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start" *ngFor="let artifact of artifacts">
+        <li class="list-group-item text-start" *ngFor="let artifact of artifacts | sort:'name'">
             <div class="form-check form-switch d-inline-block me-3">
                 <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="artifact.is_tracked" (ngModelChange)="changedCrafted(artifact)">
                 <label class="form-check-label">{{ artifact.name }}</label>
@@ -169,13 +225,61 @@
 <h2 class="my-3">Inventory</h2>
 <div class="card">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start" *ngFor="let material of materials | keyvalue">
-            {{ material.value.name }}
+        <li class="list-group-item text-start" *ngFor="let material of Object.values(materials) | sort: 'name'">
+            {{ material.name }}
             <div class="float-end">
                 <div class="input-group">
-                    <input type="text" class="form-control text-center" [(ngModel)]="inventory[material.key]" (ngModelChange)="updateInventory(material.key, 0)">
+                    <input type="text" class="form-control text-center" [(ngModel)]="inventory[material.id]" (ngModelChange)="updateInventory(material.id, 0)">
                 </div>
             </div>
         </li>
     </ul>
+</div>
+<div class="modal modal-xl" tabindex="-1" id="material-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create material</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label">ID</label>
+                        <input type="text" class="form-control" [disabled]="true" [ngModel]="newMaterial.id">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="newMaterial.name" (ngModelChange)="newMaterial.id = nameToId(String(newMaterial.name))">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Mutator</label>
+                    <div class="input-group">
+                        <select class="form-select" [(ngModel)]="newMaterial.mutator.id" required>
+                            <option value="">No mutator</option>
+                            <option [value]="mutator.id" *ngFor="let mutator of Object.values(mutators) | sort:'name'">{{ mutator.name }}</option>
+                        </select>
+                        <input class="form-control" [(ngModel)]="newMaterial.mutator.tier">
+                    </div>
+                </div>
+                <h3>Zones</h3>
+                <div class="row mb-3" *ngFor="let zone of newMaterial.zones; let i = index">
+                    <select class="form-select" [ngModel]="zone" required (ngModelChange)="newMaterial.zones[i] = $event">
+                        <option value="">Select a zone</option>
+                        <option [value]="zone.id" *ngFor="let zone of Object.values(zones) | sort:'name'">{{ zone.name }}</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <button class="btn btn-primary" (click)="newMaterial.zones.push('')">
+                        New zone
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="newMaterial.id = '';newMaterial.name = '';newMaterial.mutator.id = '';newMaterial.mutator.tier = 0;newMaterial.zones = []">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="materials[newMaterial.id] = Object.assign({}, newMaterial);newMaterial.id = '';newMaterial.name = '';newMaterial.mutator.id = '';newMaterial.mutator.tier = 0;newMaterial.zones = [];numberOfNewMaterials = numberOfNewMaterials + 1">Create material</button>
+            </div>
+        </div>
+    </div>
 </div>

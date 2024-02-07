@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectorRef, Component, isDevMode} from '@angular/core';
 import {Wayfinder} from './wayfinder';
 import {HttpClient} from "@angular/common/http";
 import {Material} from "./material";
@@ -7,10 +7,8 @@ import {Mutator} from "./mutator";
 import {Item} from "./item";
 import {Weapon} from "./weapon";
 import {Accessory} from "./accessory";
-import {AccessoryMaterials} from "./accessory_materials";
 import {Artifact} from "./artifact";
 import {Materials} from "./materials";
-import {WeaponMaterials} from "./weapon_materials";
 
 @Component({
     selector: 'app-root',
@@ -43,9 +41,39 @@ export class AppComponent {
     submitData = false
     dataSubmitTable: {id:string, name:string, rows: (string|number)[][], disabledColumns: number[], columnLevels:{[col:number]:string}}[] = [];
     dataToSubmit: {[id:string]:{[level:string]:{[index:number]:number}}} = {};
+    defaultNewItem:{
+        id:string,
+        name:string
+    } = {
+        id: '',
+        name: ''
+    };
+    newItem:{
+        id:string,
+        name:string
+        materials:Materials
+    } = {
+        ...this.defaultNewItem,
+        materials: {
+            unlock: [],
+            awake1: [],
+            awake2: [],
+            awake3: [],
+        }
+    };
+
+    newMaterial:Material = {
+        id: '',
+        mutator: {id: '', tier: 0},
+        name: '',
+        zones: []
+    }
+    numberOfNewMaterials = 0;
+
 
     constructor(
-        private http: HttpClient
+        private http: HttpClient,
+        public cdr: ChangeDetectorRef
     ) {
         this.loadMaterials()
             .then(this.loadMutators)
@@ -59,7 +87,7 @@ export class AppComponent {
             .then(this.processItems)
     }
 
-    loadMaterials = () => this.http.get<Material[]>('assets/data/materials.json').forEach(value => {
+    loadMaterials = () => this.http.get<Material[]>('assets/data/materials.json?v='+Math.random()).forEach(value => {
         for (let material of value) {
             this.materials[material.id] = material;
             if (!this.inventory[material.id]) {
@@ -68,34 +96,34 @@ export class AppComponent {
         }
     })
 
-    loadMutators = () => this.http.get<Mutator[]>('assets/data/mutators.json').forEach(value => {
+    loadMutators = () => this.http.get<Mutator[]>('assets/data/mutators.json?v='+Math.random()).forEach(value => {
         for (let mutator of value) {
             this.mutators[mutator.id] = mutator;
         }
     })
 
-    loadHunts = () => this.http.get<Zone[]>('assets/data/hunts.json').forEach(value => {
+    loadHunts = () => this.http.get<Zone[]>('assets/data/hunts.json?v='+Math.random()).forEach(value => {
         for (let zone of value) {
             zone.type = 'hunt';
             this.zones[zone.id] = zone;
         }
     })
 
-    loadExpeditions = () => this.http.get<Zone[]>('assets/data/expeditions.json').forEach(value => {
+    loadExpeditions = () => this.http.get<Zone[]>('assets/data/expeditions.json?v='+Math.random()).forEach(value => {
         for (let zone of value) {
             zone.type = 'expedition';
             this.zones[zone.id] = zone;
         }
     })
 
-    loadHighlands = () => this.http.get<Zone[]>('assets/data/highlands.json').forEach(value => {
+    loadHighlands = () => this.http.get<Zone[]>('assets/data/highlands.json?v='+Math.random()).forEach(value => {
         for (let zone of value) {
             zone.type = 'highlands';
             this.zones[zone.id] = zone;
         }
     })
 
-    loadWayfinders = () => this.http.get<Wayfinder[]>('assets/data/wayfinders.json').forEach(value => {
+    loadWayfinders = () => this.http.get<Wayfinder[]>('assets/data/wayfinders.json?v='+Math.random()).forEach(value => {
         this.wayfinders = value
         for (let wayfinder of this.wayfinders) {
             wayfinder.type = 'wayfinder'
@@ -104,7 +132,7 @@ export class AppComponent {
         }
     })
 
-    loadWeapons = () => this.http.get<Weapon[]>('assets/data/weapons.json').forEach(value => {
+    loadWeapons = () => this.http.get<Weapon[]>('assets/data/weapons.json?v='+Math.random()).forEach(value => {
         this.weapons = value
         for (let weapon of this.weapons) {
             weapon.type = 'weapon'
@@ -113,7 +141,7 @@ export class AppComponent {
         }
     })
 
-    loadAccessories = () => this.http.get<Accessory[]>('assets/data/accessories.json').forEach(value => {
+    loadAccessories = () => this.http.get<Accessory[]>('assets/data/accessories.json?v='+Math.random()).forEach(value => {
         this.accessories = value
         for (let accessory of this.accessories) {
             accessory.type = 'accessory'
@@ -121,7 +149,7 @@ export class AppComponent {
         }
     })
 
-    loadArtifacts = () => this.http.get<Artifact[]>('assets/data/artifacts.json').forEach(value => {
+    loadArtifacts = () => this.http.get<Artifact[]>('assets/data/artifacts.json?v='+Math.random()).forEach(value => {
         this.artifacts = value
         for (let artifact of this.artifacts) {
             artifact.type = 'artifact'
@@ -423,7 +451,7 @@ export class AppComponent {
                         if (!this.required_materials[id][material.id]) {
                             this.required_materials[id][material.id] = 0;
                         }
-                        this.required_materials[id][material.id] += requiredMaterial.quantity;
+                        this.required_materials[id][material.id] += Number(requiredMaterial.quantity);
                     }
                 } else {
                     this.alerts.push('Material without zones '+material.name);
@@ -461,12 +489,37 @@ export class AppComponent {
                 materials: this.required_materials[zoneId]
             })
         }
-        this.sorted_zones.sort((a, b) => Object.keys(b.materials).length - Object.keys(a.materials).length)
+        this.sorted_zones.sort((a, b) => {
+            let result = Object.keys(b.materials).length - Object.keys(a.materials).length;
+            if (result === 0) {
+                let ZonesA = 0;
+                let ZonesB = 0;
+                for (let material_id of Object.keys(a.materials)) {
+                    ZonesA += this.materials[material_id].zones.length;
+                }
+                for (let material_id of Object.keys(b.materials)) {
+                    ZonesB += this.materials[material_id].zones.length;
+                }
+                result = Object.keys(a.materials).length / ZonesA / Object.keys(b.materials).length / ZonesB;
+            }
+            if (result === 0) {
+                let aZone = this.zones[a.zone_id].name.toLowerCase();
+                let bZone = this.zones[b.zone_id].name.toLowerCase();
+                if (aZone > bZone) {
+                    result = 1;
+                } else if (aZone < bZone) {
+                    result = -1;
+                } else {
+                    result = 0;
+                }
+            }
+            return result;
+        })
     }
 
     updateInventory = (materialId:string, quantity:number) => {
         if (quantity !== 0) {
-            this.inventory[materialId] += quantity;
+            this.inventory[materialId] = Number(this.inventory[materialId]) + quantity;
             if (this.inventory[materialId] < 0) {
                 this.inventory[materialId] = 0;
             }
@@ -501,6 +554,7 @@ export class AppComponent {
     }
 
     checkCraftableWayfinder = (wayfinder:Wayfinder) => {
+        let star = '<i class="bi bi-star-fill golden me-1"></i>';
         if (!wayfinder.unlocked && wayfinder.materials.unlock.length > 0) {
             let complete = true;
             for (let material of wayfinder.materials.unlock) {
@@ -526,7 +580,7 @@ export class AppComponent {
             if (complete) {
                 this.craftable_items.push({
                     item: wayfinder,
-                    text: wayfinder.name + ' can be awakened to 1 stars'
+                    text: wayfinder.name + ' can be awakened to '+star
                 })
             }
         } else if (!wayfinder.awakened2 && wayfinder.materials.awake2.length > 0) {
@@ -540,7 +594,7 @@ export class AppComponent {
             if (complete) {
                 this.craftable_items.push({
                     item: wayfinder,
-                    text: wayfinder.name + ' can be awakened to 2 stars'
+                    text: wayfinder.name + ' can be awakened to '+star+star
                 })
             }
         } else if (!wayfinder.awakened3 && wayfinder.materials.awake3.length > 0) {
@@ -554,7 +608,7 @@ export class AppComponent {
             if (complete) {
                 this.craftable_items.push({
                     item: wayfinder,
-                    text: wayfinder.name + ' can be awakened to 3 stars'
+                    text: wayfinder.name + ' can be awakened to '+star+star+star
                 })
             }
         }
@@ -646,7 +700,7 @@ export class AppComponent {
         if (!artifact.crafted && artifact.materials.craft.length > 0) {
             let complete = true;
             for (let material of artifact.materials.craft) {
-                if (this.inventory[material.material] < material.quantity) {
+                if (!this.inventory[material.material] || this.inventory[material.material] < material.quantity) {
                     complete = false
                     break;
                 }
@@ -680,7 +734,7 @@ export class AppComponent {
                 return;
         }
         for (let material of materials) {
-            this.updateInventory(material.material, -material.quantity);
+            this.updateInventory(material.material, Number(material.quantity)*-1);
         }
         localStorage.setItem('completed', JSON.stringify(this.completed));
         this.refreshCraftables();
@@ -800,8 +854,19 @@ export class AppComponent {
         }
     }
 
+    nameToId = function (name:string):string {
+        return name.split(' ').filter((word) => word.length > 3).join('-').toLowerCase().replace('\'s', '');
+    }
+
     protected readonly JSON = JSON;
     protected readonly Object = Object;
     protected readonly Array = Array;
     protected readonly isNaN = isNaN;
+    protected readonly Number = Number;
+    protected readonly isDevMode = isDevMode;
+    protected readonly String = String;
+    protected readonly console = console
+    protected readonly Boolean = Boolean;
+    protected readonly navigator = navigator;
+    protected readonly ChangeDetectorRef = ChangeDetectorRef;
 }
