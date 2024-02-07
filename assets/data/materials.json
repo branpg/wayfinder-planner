@@ -147,6 +147,20 @@
     ]
   },
   {
+    "id": "colossus-essence",
+    "name": "Colossus essence",
+    "zones": [
+      "beastmaster"
+    ]
+  },
+  {
+    "id": "draken-maw-essence",
+    "name": "Draken maw essence",
+    "zones": [
+      "beastmaster"
+    ]
+  },
+  {
     "id": "harvest-moon-essence",
     "name": "Harvest moon essence",
     "zones": [
@@ -235,6 +249,13 @@
     "name": "Opal of the king",
     "zones": [
       "reaver-king"
+    ]
+  },
+  {
+    "id": "tainted-core",
+    "name": "Tainted core",
+    "zones": [
+      "non-obtainable"
     ]
   },
   {
@@ -590,6 +611,259 @@
     "name": "First artifact recipe",
     "zones": [
       "first"
+    ]
+  },
+  {
+    "id": "dryades-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Dryades essence",
+    "zones": [
+      "non-obtainable"
+    ]
+  },
+  {
+    "id": "optic-cortex",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Optic cortex",
+    "zones": [
+      "dread-legion"
+    ]
+  },
+  {
+    "id": "pyre-torch",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Pyre's torch",
+    "zones": [
+      "night-maw"
+    ]
+  },
+  {
+    "id": "hellswarm-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Hellswarm essence",
+    "zones": [
+      "night-maw"
+    ]
+  },
+  {
+    "id": "epitaph-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Epitaph essence",
+    "zones": [
+      "dread-legion"
+    ]
+  },
+  {
+    "id": "grim-harvest-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Grim harvest essence",
+    "zones": [
+      "storm-twins"
+    ]
+  },
+  {
+    "id": "longshot-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Longshot essence",
+    "zones": [
+      "deceiver-maras"
+    ]
+  },
+  {
+    "id": "night-edge-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Night's edge essence",
+    "zones": [
+      "ryvn"
+    ]
+  },
+  {
+    "id": "nightshade-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Nightshade essence",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "verdant-spectra",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Verdant spectra",
+    "zones": [
+      "todo"
+    ]
+  },
+  {
+    "id": "remnant-nexus",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Remnant nexus",
+    "zones": [
+      "trial-lingering-light"
+    ]
+  },
+  {
+    "id": "radiant-dawn-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Radiant dawn essence",
+    "zones": [
+      "archon-commander"
+    ]
+  },
+  {
+    "id": "crystal-spinneret",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Crystal spinneret",
+    "zones": [
+      "bloodmother"
+    ]
+  },
+  {
+    "id": "ransom-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Ransom essence",
+    "zones": [
+      "non-obtainable"
+    ]
+  },
+  {
+    "id": "slicer-dicer-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Slicer & dicer essence",
+    "zones": [
+      "non-obtainable"
+    ]
+  },
+  {
+    "id": "ichor-pearl",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Ichor pearl",
+    "zones": [
+      "bloodspawn"
+    ]
+  },
+  {
+    "id": "tempest-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Tempest essence",
+    "zones": [
+      "trial-lingering-light"
+    ]
+  },
+  {
+    "id": "titan-bane-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Titan's bane essence",
+    "zones": [
+      "talon-pyre"
+    ]
+  },
+  {
+    "id": "cagged-spectra",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Cagged spectra",
+    "zones": [
+      "todo"
+    ]
+  },
+  {
+    "id": "tooth-claw-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Tooth and claw essence",
+    "zones": [
+      "argent-hand"
+    ]
+  },
+  {
+    "id": "typhoon-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Typhoon essence",
+    "zones": [
+      "non-obtainable"
+    ]
+  },
+  {
+    "id": "venom-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Venom essence",
+    "zones": [
+      "night-maw"
+    ]
+  },
+  {
+    "id": "voidbinder-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Voidbinder essence",
+    "zones": [
+      "dread-legion"
     ]
   }
 ]

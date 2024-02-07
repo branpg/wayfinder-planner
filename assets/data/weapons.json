@@ -210,6 +210,402 @@
     "awaken3": false
   },
   {
+    "id": "colossus",
+    "name": "Colossus",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 26
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "master-call",
+          "quantity": 3
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 26
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 118
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": 26
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "master-call",
+          "quantity": 3
+        },
+        {
+          "material": "colossus-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
+    "id": "draken-maw",
+    "name": "Draken maw",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "tainted-core",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "opal-king",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "tainted-core",
+          "quantity": 3
+        },
+        {
+          "material": "draken-maw-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
+    "id": "dryades",
+    "name": "Dryades",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "26"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "tainted-core",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "26"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "master-call",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "26"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "tainted-core",
+          "quantity": "3"
+        },
+        {
+          "material": "dryades-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "epitaph",
+    "name": "Epitaph",
+    "materials": {
+      "unlock": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "master-call",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "epitaph-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    },
+    "type": "weapon",
+    "is_crafted": true
+  },
+  {
+    "id": "grim-harvest",
+    "name": "Grim harvest",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "65"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "storm-twins-ire",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "65"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "radiant-octachron",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "65"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "storm-twins-ire",
+          "quantity": "3"
+        },
+        {
+          "material": "grim-harvest-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    },
+    "type": "weapon",
+    "is_crafted": true
+  },
+  {
+    "id": "hellswarm",
+    "name": "Hellswarm",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "29"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "pyre-torch",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "29"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "29"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "pyre-torch",
+          "quantity": "3"
+        },
+        {
+          "material": "hellswarm-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
     "id": "harvest-moon",
     "name": "Harvest moon",
     "materials": {
@@ -332,6 +728,450 @@
     "awaken3": false
   },
   {
+    "id": "longshot",
+    "name": "Longshot",
+    "materials": {
+      "unlock": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "65"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "storm-twins-ire",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "grand-iriscite",
+          "quantity": "3"
+        },
+        {
+          "material": "longshot-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    },
+    "type": "weapon",
+    "is_crafted": true,
+    "is_tracked": false
+  },
+  {
+    "id": "night-edge",
+    "name": "Night's edge",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "15"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "15"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "15"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "devourer-talon",
+          "quantity": "3"
+        },
+        {
+          "material": "night-edge-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "nightshade",
+    "name": "Nightshade",
+    "materials": {
+      "unlock": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "master-call",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "nightshade-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "radiant-dawn",
+    "name": "Radiant dawn",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "verdant-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "archon-prisma",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "verdant-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "remnant-nexus",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "verdant-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": "3"
+        },
+        {
+          "material": "archon-prisma",
+          "quantity": "3"
+        },
+        {
+          "material": "radiant-dawn-essence",
+          "quantity": 0
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "tempest",
+    "name": "Tempest",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "remnant-nexus",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "65"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "ichor-pearl",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": "3"
+        },
+        {
+          "material": "remnant-nexus",
+          "quantity": "3"
+        },
+        {
+          "material": "tempest-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "titan-bane",
+    "name": "Titan's bane",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "29"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "pyre-torch",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "29"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": "29"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "pyre-torch",
+          "quantity": "3"
+        },
+        {
+          "material": "titan-bane-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "tooth-claw",
+    "name": "Tooth and claw",
+    "materials": {
+      "unlock": [
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "24"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": "3"
+        },
+        {
+          "material": "cagged-spectra",
+          "quantity": "60"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "24"
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": "3"
+        },
+        {
+          "material": "night-maw-viscera",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "24"
+        },
+        {
+          "material": "halcyon-orb",
+          "quantity": "3"
+        },
+        {
+          "material": "prismatic-arcanite",
+          "quantity": "3"
+        },
+        {
+          "material": "tooth-claw-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
     "id": "umbros",
     "name": "Umbros",
     "materials": {
@@ -452,6 +1292,132 @@
     "awaken1": false,
     "awaken2": false,
     "awaken3": false
+  },
+  {
+    "id": "venom",
+    "name": "Venom",
+    "materials": {
+      "unlock": [
+        {
+          "material": "cagged-spectra",
+          "quantity": "60"
+        },
+        {
+          "material": "verdant-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": "3"
+        },
+        {
+          "material": "night-maw-viscera",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "91"
+        },
+        {
+          "material": "verdant-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": "3"
+        },
+        {
+          "material": "archon-prisma",
+          "quantity": "3"
+        },
+        {
+          "material": "cagged-spectra",
+          "quantity": "60"
+        },
+        {
+          "material": "verdant-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "night-maw-viscera",
+          "quantity": "3"
+        },
+        {
+          "material": "venom-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "voidbinder",
+    "name": "Voidbinder",
+    "materials": {
+      "unlock": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "master-call",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "28"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "voidbinder-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
   },
   {
     "id": "windmother-fang",
