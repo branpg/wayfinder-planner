@@ -26,11 +26,13 @@ export class AppComponent {
     materials:{[id: string]: Material} = {};
     zones:{[id: string]: Zone} = {};
     alerts:string[] = [];
-    required_materials:{[zone: string]: {[material:string]: number} } = {};
+    required_materials:{[zone: string]: {[subzone:string]: {[material:string]: number}} } = {};
     sorted_zones:{
         zone_id:string,
-        materials:{
-            [material:string]: number
+        subzones: {
+            [subzone: string]: {
+                [material: string]: number
+            }
         }
     }[] = [];
     inventory: {[id: string]: number} = JSON.parse(localStorage.getItem('inventory') ?? '{}');
@@ -79,7 +81,7 @@ export class AppComponent {
             .then(this.loadMutators)
             .then(this.loadHunts)
             .then(this.loadExpeditions)
-            .then(this.loadHighlands)
+            .then(this.loadOpenZones)
             .then(this.loadWayfinders)
             .then(this.loadWeapons)
             .then(this.loadAccessories)
@@ -116,9 +118,9 @@ export class AppComponent {
         }
     })
 
-    loadHighlands = () => this.http.get<Zone[]>('assets/data/highlands.json?v='+Math.random()).forEach(value => {
+    loadOpenZones = () => this.http.get<Zone[]>('assets/data/open_zones.json?v='+Math.random()).forEach(value => {
         for (let zone of value) {
-            zone.type = 'highlands';
+            zone.type = 'open_zones';
             this.zones[zone.id] = zone;
         }
     })
@@ -445,13 +447,18 @@ export class AppComponent {
                 }
                 if (material.zones.length > 0) {
                     for (let id of material.zones) {
-                        if (!this.required_materials[id]) {
-                            this.required_materials[id] = {};
+                        let zone = this.zones[id];
+                        let parent_zone = zone.parent_zone ?? zone.id;
+                        if (!this.required_materials[parent_zone]) {
+                            this.required_materials[parent_zone] = {};
                         }
-                        if (!this.required_materials[id][material.id]) {
-                            this.required_materials[id][material.id] = 0;
+                        if (!this.required_materials[parent_zone][zone.id]) {
+                            this.required_materials[parent_zone][zone.id] = {};
                         }
-                        this.required_materials[id][material.id] += Number(requiredMaterial.quantity);
+                        if (!this.required_materials[parent_zone][zone.id][material.id]) {
+                            this.required_materials[parent_zone][zone.id][material.id] = 0;
+                        }
+                        this.required_materials[parent_zone][zone.id][material.id] += Number(requiredMaterial.quantity);
                     }
                 } else {
                     this.alerts.push('Material without zones '+material.name);
@@ -465,12 +472,17 @@ export class AppComponent {
 
     cleanMaterials = () => {
         for (let zoneId of Object.keys(this.required_materials)) {
-            for (let materialId of Object.keys(this.required_materials[zoneId])) {
-                if (
-                    this.required_materials[zoneId][materialId] <= 0 ||
-                    this.required_materials[zoneId][materialId] <= this.inventory[materialId]
-                ) {
-                    delete this.required_materials[zoneId][materialId];
+            for (let subZoneId of Object.keys(this.required_materials[zoneId])) {
+                for (let materialId of Object.keys(this.required_materials[zoneId][subZoneId])) {
+                    if (
+                        this.required_materials[zoneId][subZoneId][materialId] <= 0 ||
+                        this.required_materials[zoneId][subZoneId][materialId] <= this.inventory[materialId]
+                    ) {
+                        delete this.required_materials[zoneId][subZoneId][materialId];
+                    }
+                }
+                if (Object.keys(this.required_materials[zoneId][subZoneId]).length === 0) {
+                    delete this.required_materials[zoneId][subZoneId];
                 }
             }
             if (Object.keys(this.required_materials[zoneId]).length === 0) {
@@ -486,21 +498,27 @@ export class AppComponent {
             }
             this.sorted_zones.push({
                 zone_id: zoneId,
-                materials: this.required_materials[zoneId]
+                subzones: this.required_materials[zoneId]
             })
         }
         this.sorted_zones.sort((a, b) => {
-            let result = Object.keys(b.materials).length - Object.keys(a.materials).length;
+            let numMaterialsA = this.getNumberOfMissingMaterials(a);
+            let numMaterialsB = this.getNumberOfMissingMaterials(b);
+            let result = numMaterialsB - numMaterialsA;
             if (result === 0) {
-                let ZonesA = 0;
-                let ZonesB = 0;
-                for (let material_id of Object.keys(a.materials)) {
-                    ZonesA += this.materials[material_id].zones.length;
+                let numZonesMaterialA = 0;
+                let numZonesMaterialB = 0;
+                for (let zone_id of Object.keys(a.subzones)) {
+                    for (let material_id of Object.keys(a.subzones[zone_id])) {
+                        numZonesMaterialA += this.materials[material_id].zones.length;
+                    }
                 }
-                for (let material_id of Object.keys(b.materials)) {
-                    ZonesB += this.materials[material_id].zones.length;
+                for (let zone_id of Object.keys(b.subzones)) {
+                    for (let material_id of Object.keys(b.subzones[zone_id])) {
+                        numZonesMaterialB += this.materials[material_id].zones.length;
+                    }
                 }
-                result = Object.keys(a.materials).length / ZonesA / Object.keys(b.materials).length / ZonesB;
+                result = numZonesMaterialA/numMaterialsA - numZonesMaterialB/numMaterialsB;
             }
             if (result === 0) {
                 let aZone = this.zones[a.zone_id].name.toLowerCase();
@@ -856,6 +874,21 @@ export class AppComponent {
 
     nameToId = function (name:string):string {
         return name.split(' ').filter((word) => word.length > 3).join('-').toLowerCase().replace('\'s', '');
+    }
+
+    getNumberOfMissingMaterials = function (zone:{
+        zone_id:string,
+        subzones: {
+            [subzone: string]: {
+                [material: string]: number
+            }
+        }
+    }) {
+        let number = 0;
+        for (let subzone of Object.values(zone.subzones)) {
+            number += Object.values(subzone).length;
+        }
+        return number;
     }
 
     protected readonly JSON = JSON;

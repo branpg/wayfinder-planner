@@ -1,0 +1,16 @@
+[
+  {
+    "id": "highlands",
+    "name": "Highlands"
+  },
+  {
+    "id": "night-maw",
+    "name": "Night's maw",
+    "parent_zone": "highlands"
+  },
+  {
+    "id": "talon-pyre",
+    "name": "Talon of pyre",
+    "parent_zone": "highlands"
+  }
+]

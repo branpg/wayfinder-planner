@@ -104,26 +104,31 @@
 <div class="card" *ngIf="sorted_zones.length > 0">
     <ng-container *ngFor="let zone of sorted_zones">
         <div class="card-header">
-            {{ zones[zone.zone_id].name }} ({{ Object.keys(zone.materials).length }})
+            {{ zones[zone.zone_id].name }} ({{ getNumberOfMissingMaterials(zone) }})
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item text-start" *ngFor="let material of zone.materials | keyvalue">
-                {{ inventory[material.key] }}/{{ material.value }}
-                -
-                <span *ngIf="materials[material.key].mutator">
-                    <span class="badge bg-secondary me-1" *ngFor="let i of Array(materials[material.key].mutator.tier)">
-                        {{ mutators[materials[material.key].mutator.id].name }}
+            <ng-container *ngFor="let subzone of zone.subzones | keyvalue">
+                <li class="list-group-item text-start" *ngFor="let material of subzone.value | keyvalue">
+                    {{ inventory[material.key] }}/{{ material.value }}
+                    -
+                    <span *ngIf="materials[material.key].mutator">
+                        <span class="badge bg-secondary me-1" *ngFor="let i of Array(materials[material.key].mutator.tier)">
+                            {{ mutators[materials[material.key].mutator.id].name }}
+                        </span>
                     </span>
-                </span>
-                {{ materials[material.key].name }}
-                <div class="float-end">
-                    <div class="input-group">
-                        <span class="input-group-text">Add: </span>
-                        <input type="text" class="form-control text-center" #quantity value="1">
-                        <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(material.key, Number(quantity.value));quantity.value = '1'">+</button>
+                    {{ materials[material.key].name }}
+                    <ng-container *ngIf="zone.zone_id !== subzone.key">
+                        ({{ zones[subzone.key].name }})
+                    </ng-container>
+                    <div class="float-end">
+                        <div class="input-group">
+                            <span class="input-group-text">Add: </span>
+                            <input type="text" class="form-control text-center" #quantity value="1">
+                            <button class="btn btn-outline-secondary" type="button" (click)="updateInventory(String(material.key), Number(quantity.value));quantity.value = '1'">+</button>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            </ng-container>
         </ul>
     </ng-container>
 </div>
