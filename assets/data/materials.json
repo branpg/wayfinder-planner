@@ -812,12 +812,12 @@
     ]
   },
   {
-    "id": "cagged-spectra",
+    "id": "cragged-spectra",
     "mutator": {
       "id": "",
       "tier": 0
     },
-    "name": "Cagged spectra",
+    "name": "Cragged spectra",
     "zones": [
       "highlands"
     ]
