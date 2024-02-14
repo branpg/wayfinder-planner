@@ -1,0 +1,135 @@
+{
+	{
+    "id": "draken-maw",
+    "name": "Draken maw",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "tainted-core",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": 3
+        },
+        {
+          "material": "opal-king",
+          "quantity": 3
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": 145
+        },
+        {
+          "material": "chaos-t2-spectra",
+          "quantity": 32
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": 3
+        },
+        {
+          "material": "tainted-core",
+          "quantity": 3
+        },
+        {
+          "material": "draken-maw-essence",
+          "quantity": 1
+        }
+      ],
+      "awake1": [
+      ],
+      "awake2": [
+      ],
+      "awake3": [
+      ]
+    },
+    "unlocked": false,
+    "awaken1": false,
+    "awaken2": false,
+    "awaken3": false
+  },
+  {
+    "id": "dryades",
+    "name": "Dryades",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "26"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "tainted-core",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "26"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "master-call",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "118"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "26"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "tainted-core",
+          "quantity": "3"
+        },
+        {
+          "material": "dryades-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  }
+}

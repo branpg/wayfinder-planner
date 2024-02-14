@@ -610,11 +610,55 @@
           "quantity": 53
         }
       ],
-      "awake3": []
+      "awake3": [
+        {
+          "material": "wingrave-faith",
+          "quantity": "5"
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": "7"
+        },
+        {
+          "material": "shadow-t2-spectra",
+          "quantity": "32"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "80"
+        },
+        {
+          "material": "wingrave-courage",
+          "quantity": "5"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "7"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "40"
+        },
+        {
+          "material": "wingrave-prowess",
+          "quantity": "5"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "7"
+        },
+        {
+          "material": "solar-t1-spectra",
+          "quantity": "60"
+        }
+      ]
     },
     "unlocked": false,
     "awaken1": false,
     "awaken2": false,
-    "awaken3": false
+    "awaken3": false,
+    "type": "wayfinder",
+    "is_crafted": true,
+    "is_tracked": true
   }
 ]

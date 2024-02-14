@@ -812,12 +812,12 @@
     ]
   },
   {
-    "id": "cagged-spectra",
+    "id": "cragged-spectra",
     "mutator": {
       "id": "",
       "tier": 0
     },
-    "name": "Cagged spectra",
+    "name": "Cragged spectra",
     "zones": [
       "highlands"
     ]
@@ -864,6 +864,61 @@
     "name": "Voidbinder essence",
     "zones": [
       "dread-legion"
+    ]
+  },
+  {
+    "id": "rose-thorn-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Rose & thorn essence",
+    "zones": [
+      "wormwood"
+    ]
+  },
+  {
+    "id": "eclipse-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Eclipse essence",
+    "zones": [
+      "reaver-king"
+    ]
+  },
+  {
+    "id": "corrupt-m.l.u.",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Corrupt M.L.U.",
+    "zones": [
+      "bloodbore"
+    ]
+  },
+  {
+    "id": "juggernaut-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Juggernaut essence",
+    "zones": [
+      "bloodbore"
+    ]
+  },
+  {
+    "id": "legacy-essence",
+    "mutator": {
+      "id": "",
+      "tier": 0
+    },
+    "name": "Legacy essence",
+    "zones": [
+      "reaver-king"
     ]
   }
 ]

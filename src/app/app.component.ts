@@ -181,7 +181,11 @@ export class AppComponent {
             }
         }
         for (let id of this.tracking) {
-            this.items[id].is_tracked = true;
+            if (this.items[id]) {
+                this.items[id].is_tracked = true;
+            } else {
+                this.tracking = this.tracking.filter(key => key !== id);
+            }
         }
 
         for (let item of Object.values(this.items)) {
@@ -293,6 +297,7 @@ export class AppComponent {
         } else {
             this.tracking = this.tracking.filter(key => key !== item.id);
         }
+        this.tracking = [...new Set(this.tracking)];
         localStorage.setItem('tracking', JSON.stringify(this.tracking));
         this.refreshCraftables();
     }
