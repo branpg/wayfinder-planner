@@ -280,6 +280,69 @@
     "awaken3": false
   },
   {
+    "id": "eclipse",
+    "name": "Eclipse",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "31"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "opal-king",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "31"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "solar-t2-spectra",
+          "quantity": "31"
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": "3"
+        },
+        {
+          "material": "opal-king",
+          "quantity": "3"
+        },
+        {
+          "material": "eclipse-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
     "id": "epitaph",
     "name": "Epitaph",
     "materials": {
@@ -595,6 +658,132 @@
     "awaken3": false
   },
   {
+    "id": "juggernaut",
+    "name": "Juggernaut",
+    "materials": {
+      "unlock": [
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "91"
+        },
+        {
+          "material": "flora-t1-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "corrupt-m.l.u.",
+          "quantity": "3"
+        },
+        {
+          "material": "silver-spectra",
+          "quantity": "105"
+        },
+        {
+          "material": "flora-t1-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "treasure-phoenix-down",
+          "quantity": "3"
+        },
+        {
+          "material": "archon-prisma",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "91"
+        },
+        {
+          "material": "flora-t1-spectra",
+          "quantity": "23"
+        },
+        {
+          "material": "archaic-bone",
+          "quantity": "3"
+        },
+        {
+          "material": "corrupt-m.l.u.",
+          "quantity": "3"
+        },
+        {
+          "material": "juggernaut-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "legacy",
+    "name": "Legacy",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "shadow-t3-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "opal-king",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "shadow-t3-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "shadow-t3-spectra",
+          "quantity": "20"
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": "3"
+        },
+        {
+          "material": "opal-king",
+          "quantity": "3"
+        },
+        {
+          "material": "legacy-essence",
+          "quantity": "1"
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
     "id": "longshot",
     "name": "Longshot",
     "materials": {
@@ -841,6 +1030,69 @@
         },
         {
           "material": "radiant-dawn-essence",
+          "quantity": 0
+        }
+      ],
+      "awake1": [],
+      "awake2": [],
+      "awake3": []
+    }
+  },
+  {
+    "id": "rose-thorn",
+    "name": "Rose & thorn",
+    "materials": {
+      "unlock": [
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "30"
+        },
+        {
+          "material": "trickster-coin",
+          "quantity": "3"
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": "3"
+        },
+        {
+          "material": "bloodtouched-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "30"
+        },
+        {
+          "material": "gem-avarice",
+          "quantity": "3"
+        },
+        {
+          "material": "optic-cortex",
+          "quantity": "3"
+        },
+        {
+          "material": "deepwood-spectra",
+          "quantity": "145"
+        },
+        {
+          "material": "flora-t2-spectra",
+          "quantity": "30"
+        },
+        {
+          "material": "witchcharmed-effigy",
+          "quantity": "3"
+        },
+        {
+          "material": "wormwood-ether",
+          "quantity": "3"
+        },
+        {
+          "material": "rose-thorn-essence",
           "quantity": 0
         }
       ],
